@@ -36,10 +36,39 @@
     </nav>  
   </div>
 
-  <div class="row"><p>This is the login page</p></div>
+  <form action="action_page.php" method="post">
+    <div class="form_picture">
+        <img src="images/Company Logo.png" alt="Atlas Corporation" title="Atlas Corporation">
+    </div>
+
+    <div class="container">
+
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+
+      <button type="submit">Login</button>
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember_me"> Remember me
+      </label>
+
+      <div class="container cancel">
+
+        <button type="button" class="cancel_button">Cancel</button>
+
+        <span class="password">Forgot <a href="#">password?</a></span>
+
+      </div>
+
+    </div>
 
 
-</div>
+
+  </form>
   
 </body>
+
 </html>
