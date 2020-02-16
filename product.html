@@ -6,7 +6,14 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/navbar.css">
         <link rel="stylesheet" type="text/css" href="css/product.css">
+        <!-- Google fonts link -->
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+        <!-- Font Awesome icon link -->
+        <script src="https://kit.fontawesome.com/2a7a1d5a6b.js" crossorigin="anonymous"></script>
+        <!-- Scripts to run carousel -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -40,18 +47,39 @@
                 <!-- Product Info -->
                 <div class="col-md-6">
                     <div class="description">
-                        <!-- REMEMBER TO REMOVE THE ACER LOGO -->
+                        
                         <div class="text-left">
                             Years ahead of the competetion
                         </div>
                     </div>
-                    REMEMBER TO REMOVE THE ACER Logo
+                    
                 </div>
-                <!-- Product Picture -->
                 <div class="col-md-6">
-                    <img src="images/Laptop.png" class="img" alt="Laptop">
-                </div>
-            </div>
+                  <!-- Class contains product carousel -->
+                  <!-- Carousel scripts found on W3Schools -->
+                  <div id="demo" class="carousel slide" data-ride="carousel">
+                    <!-- Each item relates to a picture in the carousel -->
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="images/lap-front.jpg" alt="Front of laptop" width="1100" height="500">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="images/lap-side.jpg" alt="Side view of laptop" width="1100" height="500">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="images/lap-back.jpg" alt="Back of laptop" width="1100" height="500">
+                      </div>
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                      <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                      <i class="fas fa-arrow-right"></i>
+                    </a>
+                  </div> <!-- End Carousel-->
+                </div> <!-- End Column -->
+            </div>  <!-- End Row -->
             <div class="row">
                 ADD MORE CONTENT HERE
             </div>        
