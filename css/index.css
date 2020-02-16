@@ -1,0 +1,45 @@
+.jumbotron
+{
+	width: 100%;
+	text-align: center;
+	color: white;
+	background-color: #21A1CB;
+	padding: 0.5em 0em 0.5em 0em;
+	margin: 0.5em 0em 0.5em 0em;
+}
+
+.welcome_content
+{
+	font-size: 1.05em;	
+	padding: 3.5em 0em 2.5em 4em;
+}
+
+.company_mission_statement
+{
+	font-style: italic;
+	font-size: 2em;
+	text-align: center;
+}
+
+.testimonial
+{
+	margin: 0.4em 0em 0.4em 0em;
+}
+
+.media-object
+{
+	height: 6em;
+	width: 6em;
+}
+
+.media-body
+{
+	padding: 0em 0em 0em 1.5em;
+}
+
+footer
+{
+	font-style: bold;
+	background-color: #4A7280;
+	margin: 1em 0em 0em 0em;
+}

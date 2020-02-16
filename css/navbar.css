@@ -1,0 +1,16 @@
+#navigation
+{
+	background-color: #4A7280;
+	margin: 0em 0em 0em 0em;
+	height: 4em;
+}
+
+#navigation * img
+{
+	width: 40%;
+}
+
+body
+{
+	padding-top: 5em;
+}
