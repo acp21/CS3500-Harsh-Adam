@@ -6,10 +6,9 @@
 	padding: 0.5em 0em 0.5em 0em;
 	margin: 0.5em 0em 0.5em 0em;
 }
-.button-primary
+.btn
 {
 	width: auto;
 	padding: 0.625em 1.125em;
-	margin: 9em 0em 0em 0em;
-	background-color: lightblue;
+	margin: .5em 0em 0em 0em;
 }
