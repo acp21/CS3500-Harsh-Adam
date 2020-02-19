@@ -3,8 +3,8 @@
 <head>
   <title>Atlas Corporation</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/navbar.css">
-    <link rel="stylesheet" type="text/css" href="css/log_in.css">
+  <link rel="stylesheet" type="text/css" href="css/log_in.css">
+  <link rel="stylesheet" type="text/css" href="css/navbar.css">
 </head>
 <body>
   <div class="container">
@@ -27,7 +27,7 @@
           <a class="nav-link" href="catalog.html">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Contact Us</a>
+          <a class="nav-link" href="contact_us.html">Contact Us</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="log_in.html">Log In</a>
@@ -36,38 +36,35 @@
     </nav>  
   </div>
 
-  <form action="action_page.php" method="post">
-    <div class="form_picture">
-        <img src="images/Company Logo.png" alt="Atlas Corporation" title="Atlas Corporation">
-    </div>
+  <div class="modal-dialog text-center">
+    <div class="col-sm-8 main_section">
+      <div class="modal-content">
+        
+        <div class="col-12 log_in_picture">
+          <img src="images/Company Logo.png">
+        </div>
 
-    <div class="container">
+        <form class="col-12">
 
-      <label><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="username" required>
+          <div class="form-group">  
+            <input type="text" name="user_name" placeholder="Enter Username" class="form-control">
+          </div>
 
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password" required>
+          <div class="form-group">  
+            <input type="password" name="user_password" placeholder="Enter Password" class="form-control">
+          </div>
 
-      <button type="submit">Login</button>
+          <button type="submit" class="btn btn-info">Login</button>
 
-      <label>
-        <input type="checkbox" checked="checked" name="remember_me"> Remember me
-      </label>
+        </form>
 
-      <div class="container cancel">
-
-        <button type="button" class="cancel_button">Cancel</button>
-
-        <span class="password">Forgot <a href="#">password?</a></span>
+        <div class="col-12 forgot_password_link">Forgot <a href="#">Password?</a></div>
 
       </div>
-
     </div>
+  </div>
 
-
-
-  </form>
+ 
   
 </body>
 

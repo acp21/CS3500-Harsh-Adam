@@ -1,0 +1,54 @@
+/*General Product Formatting*/
+.product
+{
+	border: 0.5em groove lightgrey;
+	margin-bottom: 1em;
+}
+
+/*Formatting Product sections with Image on Left and Description on Right*/
+.product_image_left
+{
+	margin: 0em 0em 0em 0em;
+
+}
+
+.product_description_right
+{
+	margin: 2em 0em 0em 0em;
+
+}
+
+.product_description_right .jumbotron
+{
+	margin: 0em 0em 1.5em 0em;
+	padding: 0.8em 0.2em 0.8em 0.2em;
+	background-color: #21A1CB;
+	color: white;
+}
+
+/*Formatting Product sections with Image on Right and Description on Left*/
+.product_image_right
+{
+	margin: 0em 0em 0em 0em;
+
+}
+
+.product_description_left
+{
+	margin: 2em 0em 0em 0em;
+
+}
+
+.product_description_left .jumbotron
+{
+	margin: 0em 0em 1.5em 0em;
+	padding: 0.8em 0.2em 0.8em 0.2em;
+	background-color: #21A1CB;
+	color: white;
+}
+
+/*General Product Formatting*/
+.learn_more
+{
+	margin-bottom: 1em;
+}
