@@ -1,9 +1,11 @@
+/*Page Background*/
 body
 {
 	background: url(../images/log_in_background.jpg) no-repeat center center fixed;
 	background-size: cover;
 }
 
+/*Modal Look and Feel*/
 .main_section
 {
 	margin: 0em auto;
@@ -18,6 +20,7 @@ body
 	box-shadow: 0em 0em 0.3em #215566;
 }
 
+/*Inputs*/
 .form-group input
 {
 	border: 0em;
@@ -30,6 +33,7 @@ body
 	margin-bottom: 0.5em;
 }
 
+/*Links*/
 .forgot_password_link
 {
 	margin-bottom: 0.3em;
