@@ -7,7 +7,8 @@
   <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
-  <div class="container">
+<!--   Main Bootstrap Container -->
+  <div class="container-fluid">
 
     <div class="row">
       <!-- Navigation Bar -->
@@ -36,81 +37,86 @@
         </ul> 
       </nav>  
     </div>
-    
-
 
     <div class="row">
-      <h3 class="jumbotron">Welcome</h3>  
-      <img src="images/Company Logo.png" alt="Atlas Corporation">
-      <p class="welcome_content">
-        <b>Atlas Corporation</b><br>
-        One stop destination for all of your technological needs.
-      </p>
+      <!-- Home Page Navigation -->
+      <div class="col-md-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Welcome</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Mission Statement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Latest News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Testimonials</a>
+          </li>
+        </ul>
+      </div>      
+
+      <!-- Company Logo -->
+      <div class="col-md- welcome_logo">
+        <img src="images/Company Logo.png">        
+      </div>
     </div>
 
-    <div class="row">
-      <h3 class="jumbotron">Mission Statement</h3>
-      <p class="company_mission_statement">
-        We are driven to driven to provide the best technology to everyone in the world.
-      </p>
+    <!-- Brief Company Description -->
+    <div class="row non_top_row">
+      <div class="col-md-12">
+        <p><b>Atlas Corporation</b> has been servicing the United States Tech Sector for the past 37 years. Here at Atlas we pride ourselves on being on the bleeding edge of innovation by constantly challenging our family of employees to simply be the best. We look for those who have never lost the imaginitive spark that aspires young children to explore. Here at Atlas we are simply experts with the curiosity of a child and the brain of a scientist. Combine all of this and what do you get? Perfection.</p>
+      </div>
     </div>
 
-    <div class="row">
+    <!-- Company Mission Statement -->
+    <div class="row non_top_row">
+      <div class="col-md-12">
+        <div class="mission_statement_background">
+          <p class="mission_title">Mission</p>
 
-      <h3 class="jumbotron">Testimonials</h3>
+          <p class="mission_statement">We are driven to keep the spark that innovates alive to fuel the minds of the future.</p>
+        </div>
+       </div>
+    </div>
 
-      <div class="media testimonial">
-        <div class="media-left">
-          <img src="images/Apple Logo.png" class="media-object">
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Apple</h4>
-          <p>Their help designing our Apple Watches revolutionized the way that we delivered this project to you.</p>
-        </div>
+    <!-- Company Latest News -->
+    <div class="row non_top_row">
+      <!-- Section Header -->
+      <h4 class="jumbotron">Latest News</h4>
+
+      <!-- Section Articles -->
+      <div class="col news_block">
+        <img src="images/article_1.jpg" class="article_picture">
+        <p class="article_brief_explanation">See how Blockchain is advancing our cause within the sector.</p>
+        <a href="https://business.financialpost.com/small-cap-investing/hive-blockchain-stock-has-momentum-influential-backers">Read More</a>
       </div>
 
-      <div class="media testimonial">
-        <div class="media-left">
-          <img src="images/Google Logo.png" class="media-object">
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Google</h4>
-          <p>Atlas Corporation brought the technical expertise we needed to develop Google Stadia.</p>
-        </div>
+      <div class="col news_block">
+        <img src="images/article_2.png" class="article_picture">
+        <p class="article_brief_explanation">See how Altas takes our commitment to employees seriously.</p>
+        <a href="https://business.financialpost.com/technology/new-hackdiversity-documentary-wants-the-tech-sector-to-start-taking-inclusivity-seriously">Read More</a>
       </div>
 
-      <div class="media testimonial">
-        <div class="media-left">
-          <img src="images/Microsoft Logo.jpg" class="media-object">
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Microsoft</h4>
-          <p>Atlas Corporation is on the cutting edge of product development. Teaming up with them to develop Project xCloud was an amazing decision.</p>
-        </div>
+      <div class="col news_block">
+        <img src="images/article_3.jpg" class="article_picture">
+        <p class="article_brief_explanation">See why backing tech companies like Atlas benefits both you and us in a big way.</p>
+        <a href="https://www.investopedia.com/articles/stocks/10/primer-on-the-tech-industry.asp">Read More</a>
       </div>
 
-      <div class="media testimonial">
-        <div class="media-left">
-          <img src="images/Facebook Logo.png" class="media-object">
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Facebook</h4>
-          <p>Facebook and Atlas Corporation have entered a partnership that will fuel the cutting edge innovation involved with Social Media.</p>
-        </div>
-      </div>
+      <div class="col news_block">
+        <img src="images/article_4.jpg" class="article_picture">
+        <p class="article_brief_explanation">Here at Atlas we have innovative initiatives to give back to everyone aorund us.</p>
+        <a href="https://builtin.com/articles/most-charitable-companies">Read More</a>
 
-      <div class="media testimonial">
-        <div class="media-left">
-          <img src="images/Tesla Logo.jpg" class="media-object">
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Tesla</h4>
-          <p>Atlas Corporation has graced us with tools that enable out corporation to maximize our productivity in order to bring our Products to you.</p>
-        </div>
       </div>
 
     </div>
+
 
   </div>
+
+
 </body>
 </html>
