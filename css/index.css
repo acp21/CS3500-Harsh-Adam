@@ -1,8 +1,25 @@
 
+.main_page_vertical_nav
+{
+	position: fixed;
+	top: 10em;
+	left: 2em;
+	background-color: #629fb299;
+	padding: 10em 0em 10em 0em;
+}
+
 /*Top Row of the Page*/
+.top_row
+{
+	margin: 0em 11em 1em 11em;
+	text-align: center;
+}
+
 .welcome_logo
 {
-	padding-left: 9.2em;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
 }
 
 /*Every row except the top row has to be have these margins*/
@@ -15,7 +32,6 @@
 /*Mision Statement*/
 .mission_statement_background
 {
-	height: 20em;
 	background-color: #8199A1;
 }
 
@@ -34,18 +50,18 @@
 	font-size: 2.3em;
 	text-align: center;
 	color: white;
-	padding: 0.4em 0em 0em 0em 0em;
-	margin: 0em 1.5em 0.3em 1.5em; 
+	padding: 0.4em 0em 0.8em 0em;
+	margin: 0em 1.5em 0em 1.5em; 
 }
 
-/*Latest News*/
+/*Section Titles*/
 h4.jumbotron
 {
 	width: 100%;
 	padding: 0.8em 0em 0.8em 0em;
-	margin-bottom: 0em;
+	margin-bottom: 1em;
 	color: white;
-	background-color: lightblue;
+	background-color: #21A1CB;
 }
 
 /*Latest News Articles*/
@@ -53,7 +69,6 @@ h4.jumbotron
 {
 	width: 7em;
 	height: 7em;
-	margin-top: 1em;
 }
 
 .article_brief_explanation
@@ -61,4 +76,17 @@ h4.jumbotron
 	font-size: 0.95em;
 	text-align: center;
 	margin-bottom: 0.1em;
+}
+
+/*Testimonials*/
+.testimonial_video
+{
+	width: 100%;
+	height: auto;
+}
+
+.testimonial_description
+{
+	font-size: 1.5em;
+	text-align: center;
 }
