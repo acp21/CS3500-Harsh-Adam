@@ -14,6 +14,11 @@
 	margin-bottom: 1em;
 }
 
+.btn-primary
+{
+	margin-left: 3em;
+}
+
 /*Formatting Product sections with Image on Left and Description on Right*/
 .product_image_left
 {
