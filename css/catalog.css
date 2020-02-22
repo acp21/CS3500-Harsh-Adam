@@ -1,7 +1,16 @@
+.main_page_vertical_nav
+{
+	position: fixed;
+	top: 10em;
+	left: 2em;
+	background-color: #629fb299;
+	padding: 10em 0em 10em 0em;
+}
+
 /*General Product Formatting*/
 .product
 {
-	border: 0.5em groove lightgrey;
+	border-bottom: 0.2em solid black;
 	margin-bottom: 1em;
 }
 
@@ -51,4 +60,13 @@
 .learn_more
 {
 	margin-bottom: 1em;
+}
+
+/*Footer Styling*/
+footer
+{
+    text-align: center;
+    color: white;
+    background-color: #4A7280;
+    padding: 2em 0em 1em 0em;
 }
