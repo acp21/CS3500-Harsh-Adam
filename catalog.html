@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/catalog.css">
   <link rel="stylesheet" type="text/css" href="css/navbar.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -71,7 +71,7 @@
           <h4 class="jumbotron">Atlas Corporation Presents the ProBook</h4>
           <h5>The Pro Book is a revolutionary product that boasts top of the line specs. The internal hardware is 7 years ahead of anything found on the market. The Pro Book allows you to multitask without the fear of being bogged down. We wanted to deliver a piece of hardware that allowed our users to game at the finest settings while also being able to carry the device around with no difficulty.</h5><br>
           <a href="product.html">Learn More</a>
-          <button type="button" class="btn btn-primary">Buy</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#purchase_modal">Buy</button>
         </div>   
       </div>
     </section>
@@ -82,7 +82,7 @@
           <h4 class="jumbotron">Atlas Corporation Presents the ProWatch</h4>
           <h5>The Pro Watch is a anomonly of hardware and software brought to your wrist. We have engineered and then engineered further to give you the power everyone is used from the Pro Phone in the Pro Watch. Capable of taking calls, texting, and playing games the Pro Watch is ready for anything your day entails. Afraid of getting it wet? Not to worry the Pro Watch is completely waterproof and dustproof. Take your day on with no hesitation of the Pro Watch slowing you down. </h5><br>
           <a href="#">Learn More</a>
-          <button type="button" class="btn btn-primary">Buy</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#purchase_modal">Buy</button>
         </div>   
         <div class="col-md-6 product_image_right">
           <img src="images/smart-watch.jpg" class="img-fluid main_products" alt="ProWatch" title="ProWatch">
@@ -99,7 +99,7 @@
           <h4 class="jumbotron">Atlas Corporation Presents the ProPhone</h4>
           <h5>Atlas Corporation has taken a fan favorite and had the audacity to re imagine what a phone is. With the brand new advanced virtualization technology driven by artificial intelligence the Pro Phone is ready to tackle any problem that will come its way. With this new technology we are able to provide better cell service and capture photots and videos a lot better because of the in built AI.</h5><br>
           <a href="#" class="learn_more">Learn More</a>
-          <button type="button" class="btn btn-primary">Buy</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#purchase_modal">Buy</button>
         </div>   
       </div>
     </section>
@@ -125,8 +125,8 @@
 
           <!-- Modal Header -->
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">Purchase Form</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
 
           <!-- Checkout Modal -->
@@ -134,8 +134,8 @@
             <!-- Container for Modal Content -->
             <div class="container">
               <!-- Form to collect to input -->
-              <form class="checkout_form">
-                <label>Personal Information</label>
+              <form class="checkout_form" method="POST">
+                <label class="checkout_info_label">Personal Information</label>
                 <!-- Name -->
                 <div class=row>
                   <div class="col">
@@ -148,30 +148,27 @@
 
                 <!-- Address -->
                 <div class=row>
-                  <div class="col">
-                    <input type="text" name="streetAddress" class="form-control" placeholder="Street Address" required>
-                  </div>
-                  <div class="col">
-                    <input type="text" name="optionalAddress" class="form-control" placeholder="Apt, Suite, or Building (Optional)">
-                  </div>
+                  <input type="text" name="streetAddress" class="form-control" placeholder="Street Address" required><br>
+
+                  <input type="text" name="optionalAddress" class="form-control" placeholder="Apt, Suite, or Building (Optional)">
                 </div> 
                 <div class=row>
                   <div class="col">
-                    <input type="text" name="zipcode" class="form-control" placeholder="Zip Code" required>
+                    <input type="text" name="location" class="form-control" placeholder="City, State" required>
                   </div>
                   <div class="col">
-                    <input type="text" name="location" class="form-control" placeholder="City, State" required>
+                    <input type="text" name="zipcode" class="form-control" placeholder="Zip Code" required>
                   </div>
                 </div> 
 
-                <label>Billing Information</label>
+                <label class="checkout_info_label">Billing Information</label>
                 <!-- Credit Card -->
                 <div class="row">
                   <input type="text" name="creditCard" class="form-control" placeholder="Card Number" required>
                 </div>
                 <div class=row>
                   <div class="col">
-                    <input type="date" name="expiration" class="form-control" placeholder="Expiration Date" required>
+                    <input type="date" name="expiration" class="form-control" required>
                   </div>
                   <div class="col">
                     <input type="password" name="cvv" class="form-control" placeholder="CVV" required>
@@ -183,7 +180,7 @@
 
           <!-- Modal Footer -->
           <div class="modal-footer">
-            <button type="button" class="btn btn-default place_order_button" data-dismiss="modal">Place Order</button>
+            <button type="button" class="btn btn-primary place_order_button" data-dismiss="modal">Place Order</button>
           </div>
         </div>
       </div>

@@ -74,6 +74,40 @@
 	padding: 2em 2em 2em 2em;
 }
 
+.modal-title
+{
+	float: left;
+	font-weight: bold;
+}
+
+.col
+{
+	padding: 0em 0em 0em 0em;
+}
+
+.checkout_info_label
+{
+	color: white;
+	background-color: #21A1CB;;
+	text-align: center;
+	font-weight: bold;
+	width: 100%;
+	padding: 0.5em 0em 0.5em 0em;
+}
+
+input
+{
+	margin: 0.5em 0em 0.5em 0em;
+}
+
+.place_order_button
+{
+	width: 80%;
+	position: relative;
+	right: 9%;
+}
+
+
 /*Footer Styling*/
 footer
 {
