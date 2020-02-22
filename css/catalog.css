@@ -11,7 +11,8 @@
 .product
 {
 	border-bottom: 0.2em solid black;
-	margin-bottom: 1em;
+/*	margin-bottom: 1em;*/
+	margin: 0em 11em 1em 11em;
 }
 
 .btn-primary
@@ -28,7 +29,7 @@
 
 .product_description_right
 {
-	margin: 2em 0em 0em 0em;
+	margin: 2em 0em 1em 0em;
 
 }
 
@@ -49,7 +50,7 @@
 
 .product_description_left
 {
-	margin: 2em 0em 0em 0em;
+	margin: 2em 0em 1em 0em;
 
 }
 
