@@ -1,3 +1,6 @@
+<!-- PRODUCT PAGE-->
+<!-- ADAM POHL -->
+<!-- WRITTEN FOR CS3500 -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -47,7 +50,7 @@
                 <!-- Product Info -->
                 <div class="col-md-6">
                     <div class="description">
-                        
+                        <!-- Motto for laptop -->
                         <div class="text-left">
                             Years ahead of the competetion
                         </div>
@@ -81,17 +84,24 @@
                 </div> <!-- End Column -->
             </div>  <!-- End Row -->
             <div class="row">
-                <h2 class="jumbotron">The best laptop on the market</h4>
+              <!-- Laptop specs for actual laptop found on Newegg -->
+                <h2 class="jumbotron"><ul>
+                  <li>Intel Core i5 10th Gen 1035G1</li>
+                  <li>8 GB LPDDR4 Memory 512 GB SSD</li>
+                  <li>Intel UHD Graphics</li>
+                  <li>1920 x 1080</li>
+                </ul></h2>
             </div>
+            <!-- Buy now button opens a modal for user to enter details -->
             <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target=".modal">BUY NOW</button>
             <div class="modal fade" id="purchase">
               <div class="modal-dialog modal-xl">
                   <div class="modal-content">
-
+                    <!-- Modal header just has text -->
                       <div class="modal-header">
                           <h4 class="modal-title">Purchase Details</h4>
                       </div>
-
+                      <!-- Modal body, contains form for input -->
                       <div class="modal-body">
                         <div class="contactform">
                           <div class="row">
@@ -116,6 +126,7 @@
                           </div>
                           <div class="form-group">
                             <label for="state"><b>State</b></label>
+                            <!-- Drop down list containing all 50 states -->
                             <select name="state" id="state" class="form-control">
                               <option value="">AL</option>
                               <option value="">AK</option>
@@ -170,7 +181,7 @@
                             </select>
                           </div>
                       </div>
-
+                      <!-- Modal footer has enter btn -->
                       <div class="modal-footer">
                           <button type="button" class="btn btn-danger" data-dismiss="modal">Purchase</button>
                       </div>

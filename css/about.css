@@ -7,12 +7,13 @@
     display: flex;
     justify-content: center;
 }
+/* Format overall layout of team members */
 .team{
     display: flex;
     justify-content: center;
     font-family: 'Nanum Gothic', sans-serif;
 }
-
+/* Add border to individual team member */
 .developer{
     padding: .5em .5em .5em .5em;
     margin: .5em .5em .5em .5em;
@@ -28,4 +29,16 @@
 .developer p{
     margin-top: .5em;
     width: 100%;
+}
+/* This formats everything in the about our company section */
+.about {
+    text-align: center;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: x-large;
+}
+/* Formats about our project */
+.project{
+    text-align: center;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: x-large;
 }

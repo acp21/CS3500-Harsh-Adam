@@ -1,3 +1,4 @@
+/* Setting up format for jumbotron color */
 .jumbotron{
     width: 100%;
 	text-align: center;
@@ -6,6 +7,7 @@
 	padding: 0.5em 0em 0.5em 0em;
 	margin: 0.5em 0em 0.5em 0em;
 }
+/* Formatting submit btn */
 .btn
 {
 	width: auto;
