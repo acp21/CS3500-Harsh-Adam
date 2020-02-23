@@ -36,7 +36,7 @@
 .product_description_right .jumbotron
 {
 	margin: 0em 0em 1.5em 0em;
-	padding: 0.8em 0.2em 0.8em 0.2em;
+	padding: 0.8em 0.2em 0.8em 0.5em;
 	background-color: #21A1CB;
 	color: white;
 }
@@ -57,7 +57,7 @@
 .product_description_left .jumbotron
 {
 	margin: 0em 0em 1.5em 0em;
-	padding: 0.8em 0.2em 0.8em 0.2em;
+	padding: 0.8em 0.2em 0.8em 0.5em;
 	background-color: #21A1CB;
 	color: white;
 }

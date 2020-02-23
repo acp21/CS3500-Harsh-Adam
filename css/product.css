@@ -45,3 +45,13 @@ ul{
   /* max-height: 20px; */
   overflow-y: scroll;
 }
+
+/*Footer Styling*/
+footer
+{
+    text-align: center;
+    color: white;
+    background-color: #4A7280;
+    padding: 2em 0em 1em 0em;
+    margin-top: 1em;
+}
