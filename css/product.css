@@ -3,7 +3,7 @@
     font-size: 50px;
     font-family: 'Nanum Gothic', sans-serif;
 }
-
+/* Carousel Styling */
 .carousel-inner img {
     width: 100%;
     height: 100%;
@@ -32,17 +32,20 @@ ul{
 .btn{
   width: 100%;
 }
+
 .scrollable-menu {
   height: auto;
   max-height: 200px;
   overflow-x: hidden;
 }
+
+/* Styling for purchase modal */
 .modal{
   width: 100%;
 }
+
 .drop{
   height: auto;
-  /* max-height: 20px; */
   overflow-y: scroll;
 }
 
@@ -66,6 +69,5 @@ footer
 }
 .pic{
   width: 100%;
-  /* height: 30%; */
   margin: .5em 0em .5em 0em;
 }
