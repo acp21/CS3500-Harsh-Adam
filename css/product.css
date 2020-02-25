@@ -61,7 +61,7 @@ footer
 
 .specs{
   color: lightgrey;
-  text-decoration: underline;
+  font-weight: 700;
 }
 .desc{
   text-align: center;
