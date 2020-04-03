@@ -26,4 +26,48 @@ window.addEventListener('load', function(event)
 
 	//Call the function to start the "typing"
 	missionStatementWriterHandler();	
+
+	//Handle highlighting what section we are on in the vertical nav bar
+	var m_PageSections = document.querySelectorAll("div.row");
+	var m_VerticalNavEntries = document.querySelectorAll("ul.main_page_vertical_nav li a");
+
+	console.log(m_VerticalNavEntries);
+
+	m_PageSections.forEach(function(section)
+	{
+		section.addEventListener("mouseover", function()
+		{
+			if(getNavLinkFromSection(section) != null)
+			{
+				getNavLinkFromSection(section).style.backgroundColor = 'lightblue'; 
+			}
+		});
+		section.addEventListener("mouseout", function()
+		{
+			if(getNavLinkFromSection(section) != null)
+			{
+				getNavLinkFromSection(section).style.backgroundColor = 'transparent'; 
+			} 
+		});
+	});
+
+	//Create a psuedo map object to map div objects to vertical nav bar objects
+	function getNavLinkFromSection(section)
+	{
+		if(section == m_PageSections[0] || section == m_PageSections[1] || section == m_PageSections[0])
+		{
+			return m_VerticalNavEntries[0];
+		}
+
+		if(section == m_PageSections[3]) return m_VerticalNavEntries[1];
+		if(section == m_PageSections[4]) return m_VerticalNavEntries[2];
+
+		if(section == m_PageSections[5] || section == m_PageSections[6] || section == m_PageSections[7])
+		{
+			return m_VerticalNavEntries[3];
+		}
+
+		return null;
+	}
+
 });
