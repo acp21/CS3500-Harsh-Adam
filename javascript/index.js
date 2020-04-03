@@ -11,6 +11,7 @@ window.addEventListener('load', function(event)
 	{
 		if(loopCtr < MISSION_STATEMENT.length)
 		{
+			//Append a character to the mission statement
 			document.querySelectorAll("p.mission_statement")[0].innerHTML += MISSION_STATEMENT.charAt(loopCtr);
 			//Preincrement for effeciency
 			++loopCtr;
@@ -20,5 +21,5 @@ window.addEventListener('load', function(event)
 	}
 
 	//Call the function to start the "typing"
-	missionStatementWriterHandler();
+	missionStatementWriterHandler();	
 });
