@@ -15,7 +15,7 @@ window.addEventListener('load', function(event)
 	var m_PasswordReentryIntput 	= document.querySelectorAll("input.user_password_reentry")[0];
 
 	var m_ErrorMessageBox 				= document.createElement("p");
-	m_ErrorMessageBox.innerHTML 		= "Please Fix Your Informations!";
+	m_ErrorMessageBox.innerHTML 		= "Please Fix Your Information!";
 	m_ErrorMessageBox.style.color 		= 'red';
 	m_ErrorMessageBox.style.fontWeight 	= 'bold';
 
