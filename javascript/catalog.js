@@ -49,7 +49,7 @@ window.addEventListener('load', function(event)
 		m_Products[elemntId].style.transition = '4s opacity';
 	}
 
-	//Handle Bolding what product we are on in the vertical nav bar
+	//Handle highlighting what product we are on in the vertical nav bar
 	var m_VerticalNavEntries = document.querySelectorAll("ul.main_page_vertical_nav li a");
 	var m_Products = document.querySelectorAll("section");
 
@@ -57,12 +57,17 @@ window.addEventListener('load', function(event)
 	{
 		product.addEventListener("mouseover", function()
 		{
-			getNavLinkFromProduct(product).style.backgroundColor = 'lightblue'; 
-
+			if(getNavLinkFromProduct(product) != null)
+			{
+				getNavLinkFromProduct(product).style.backgroundColor = 'lightblue'; 
+			}
 		});
 		product.addEventListener("mouseout", function()
 		{
-			getNavLinkFromProduct(product).style.backgroundColor = 'transparent'; 
+			if(getNavLinkFromProduct(product) != null)
+			{
+				getNavLinkFromProduct(product).style.backgroundColor = 'transparent'; 
+			}
 		});
 	});
 
