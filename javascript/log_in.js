@@ -24,21 +24,25 @@ window.addEventListener('load', function(event)
 		if(m_UsernameInput.value.length < MINIMUM_USERNAME_LENGTH)
 		{
 			m_UsernameInput.style.color = 'red';
+			m_UsernameInput.parentElement.style.border = '0.15em solid red';
 			invalidInput = true;	
 		}
 		else
 		{
 			m_UsernameInput.style.color = 'black';
+			m_UsernameInput.parentElement.style.border = 'none';
 		}
 
 		if(m_PasswordInput.value.length < MINIMUM_PASSWORD_LENGTH)
 		{
 			m_PasswordInput.style.color = 'red';
+			m_PasswordInput.parentElement.style.border = '0.15em solid red';
 			invalidInput = true;
 		}
 		else
 		{
 			m_PasswordInput.style.color = 'black';
+			m_PasswordInput.parentElement.style.border = 'none';
 		}
 
 		//Check if any input is invalid

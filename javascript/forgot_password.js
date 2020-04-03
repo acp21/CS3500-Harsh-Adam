@@ -42,6 +42,7 @@ window.addEventListener('load', function(event)
 		if(invalidInput)
 		{
 			m_EmailInput.style.color = 'red';
+			m_EmailInput.parentElement.style.border = '0.15em solid red';
 			event.preventDefault();
 			m_Form.append(m_ErrorMessageBox);
 		}

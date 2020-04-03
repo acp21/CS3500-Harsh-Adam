@@ -14,6 +14,11 @@ window.addEventListener('load', function(event)
 	var m_PasswordInput 			= document.querySelectorAll("input.user_password")[0];
 	var m_PasswordReentryIntput 	= document.querySelectorAll("input.user_password_reentry")[0];
 
+	var m_ErrorMessageBox 				= document.createElement("p");
+	m_ErrorMessageBox.innerHTML 		= "Please Fix Your Informations!";
+	m_ErrorMessageBox.style.color 		= 'red';
+	m_ErrorMessageBox.style.fontWeight 	= 'bold';
+
 	m_Form.addEventListener("submit", function(event)
 	{
 		var invalidInput = false;
@@ -46,6 +51,7 @@ window.addEventListener('load', function(event)
 		if(invalidInput)
 		{
 			event.preventDefault();
+			m_Form.append(m_ErrorMessageBox);
 		}
 		else
 		{
@@ -73,6 +79,7 @@ window.addEventListener('load', function(event)
 		}
 
 		m_NameInput.style.color = (isValid) ? 'black' : 'red';
+		m_NameInput.parentElement.style.border = (isValid) ? 'none' : '0.15em solid red';
 
 		return isValid;
 	}
@@ -87,6 +94,7 @@ window.addEventListener('load', function(event)
 		}
 
 		m_UsernameInput.style.color = (isValid) ? 'black' : 'red';
+		m_UsernameInput.parentElement.style.border = (isValid) ? 'none' : '0.15em solid red';
 
 		return isValid;
 	}
@@ -113,6 +121,7 @@ window.addEventListener('load', function(event)
 		}
 
 		m_EmailInput.style.color = (isValid) ? 'black' : 'red';
+		m_EmailInput.parentElement.style.border = (isValid) ? 'none' : '0.15em solid red';
 
 		return isValid;
 	}
@@ -127,6 +136,7 @@ window.addEventListener('load', function(event)
 		}
 
 		m_PasswordInput.style.color = (isValid) ? 'black' : 'red';
+		m_PasswordInput.parentElement.style.border = (isValid) ? 'none' : '0.15em solid red';
 
 		return isValid;
 	}
@@ -135,13 +145,14 @@ window.addEventListener('load', function(event)
 	{
 		var isValid = true;
 
-		if(m_PasswordInput.value.localeCompare(m_PasswordReentryIntput.value) != 0)
+		if(m_PasswordInput.value.localeCompare(m_PasswordReentryIntput.value) != 0 || m_PasswordReentryIntput.value.length == 0)
 
 		{
 			isValid = false;
 		}
 
 		m_PasswordReentryIntput.style.color = (isValid) ? 'black' : 'red';
+		m_PasswordReentryIntput.parentElement.style.border = (isValid) ? 'none' : '0.15em solid red';
 
 		return isValid;
 	}
