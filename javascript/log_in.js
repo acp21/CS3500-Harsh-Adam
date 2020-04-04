@@ -2,7 +2,7 @@
 window.addEventListener('load', function(event)
 {
 	//Validate Form Input
-	const MINIMUM_USERNAME_LENGTH = 5;
+	const MINIMUM_USERNAME_LENGTH = 4;
 	const MINIMUM_PASSWORD_LENGTH = 7;
 
 	var m_Form = document.querySelectorAll("form.login_form")[0];

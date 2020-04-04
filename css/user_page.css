@@ -1,0 +1,87 @@
+/*Format the Side Bar*/
+div.user_icon
+{
+	display: block;
+	text-align: center;
+}
+
+div.user_icon img
+{
+	width: 75%;
+	height: auto;
+}
+
+div.company_logo
+{
+	display: block;
+	text-align: center;
+}
+
+/*Format the Main Content*/
+
+/*Format the welcome*/
+div.welcome
+{
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+h2.welcome_phrase
+{
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	color: white;
+	background-color: #21A1CB;
+}
+
+/*Format the warning*/
+div.warning
+{
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+h4.warning_phrase
+{
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	color: white;
+	background-color: darkred;
+}
+
+/*Format Products section*/
+div.title
+{
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+h4.title_name
+{
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	color: white;
+	background-color: #21A1CB;
+}
+
+div.products
+{
+	width: 100%;
+}
+
+div.product
+{
+	padding-left: 0em;
+}
+
+/*Format the Unauthorized Prompt*/
+h1.unauthorized_user
+{
+	display: block;
+	text-align: center;
+	color: white;
+	background-color: darkred;
+}
