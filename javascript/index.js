@@ -5,7 +5,7 @@ window.addEventListener('load', function(event)
 
 	//Fly in the vertical nav bar from the left
 	document.querySelectorAll("ul.main_page_vertical_nav")[0].style.transform = 'translateX(22em)';
-	document.querySelectorAll("ul.main_page_vertical_nav")[0].style.transition = 'transform 0.6s linear 0ms';
+	document.querySelectorAll("ul.main_page_vertical_nav")[0].style.transition = 'transform 0.6s linear 0s';
 
 	//Animate writing the mission statement
 	var loopCtr = 0;
