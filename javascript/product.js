@@ -8,8 +8,10 @@ window.addEventListener('load', function(event)
 
 	var m_InfoSection = document.querySelectorAll("div.info_section")[0];
 
+	//Event listener to initiate animation of the pictures
 	window.addEventListener("scroll", function(event)
 	{
+		//Pictures will come in one by one
 		if(sectionShouldBeSeen(m_InfoSection))
 		{
 			var transitionCommandBase = "opacity ".concat(PIC_ANIMATION_PERIOD_S.toString(), "s ease-in ");
@@ -24,7 +26,7 @@ window.addEventListener('load', function(event)
 		}
 	});
 
-
+	//Checks if the pictures should be seen in the viewport
 	function sectionShouldBeSeen(section)
 	{
 		var shouldBeInView = false;
@@ -44,8 +46,11 @@ window.addEventListener('load', function(event)
 
 	var loopCtr = 0;
 
+	//Function that handles writing on the screen
 	function catchPhraseWriter()
 	{
+		//Figure out what html page invoked our js function and select the 
+		//appropriate catch phrase for that page
 		var htmlPage = location.pathname.split('/').pop();
 
 		var indexOfCatchPhrase = 0;
@@ -84,6 +89,7 @@ window.addEventListener('load', function(event)
 	var m_PurchaseButton = document.querySelectorAll("div.modal-footer button")[0];
 	var m_InputFields = document.querySelectorAll(".form-control");
 
+	//Event listener that invokes the validations
 	m_PurchaseButton.addEventListener("click", function(event)
 	{
 		var invalidInput = false;
@@ -119,6 +125,7 @@ window.addEventListener('load', function(event)
 		}
 	});
 
+	//Checks to see if the name is valid
 	function checkNameValidation()
 	{
 		var isValid = true;
@@ -135,6 +142,7 @@ window.addEventListener('load', function(event)
 		return isValid;
 	}
 
+	//Checks to see if the street adress is long enough
 	function checkStreetAddressValidation()
 	{
 		var isValid = true;
@@ -151,6 +159,7 @@ window.addEventListener('load', function(event)
 		return isValid;
 	}
 
+	//Checks to see if the city is of minimum length
 	function checkCityValidation()
 	{
 		var isValid = true;
@@ -167,13 +176,14 @@ window.addEventListener('load', function(event)
 		return isValid;
 	}	
 
+	//Checks to see zip code is valid
 	function checkZipCodeValidation()
 	{
 		var isValid = true;
 
 		var zipInput = m_InputFields[3];
 
-		if(zipInput.value.length != 5 || isNaN(parseInt(zipInput.value)))
+		if(zipInput.value.length != 5 ||  !/^[0-9]*$/.test(zipInput.value))
 		{
 			isValid = false;
 		}

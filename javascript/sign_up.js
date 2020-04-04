@@ -1,6 +1,7 @@
 //Wait for the page to finish loading
 window.addEventListener('load', function(event)
 {
+	//Hadle form validation for the signup form
 	const MINIMUM_USERNAME_LENGTH 	= 5;
 	const MINIMUM_PASSWORD_LENGTH 	= 7;
 
@@ -19,6 +20,7 @@ window.addEventListener('load', function(event)
 	m_ErrorMessageBox.style.color 		= 'red';
 	m_ErrorMessageBox.style.fontWeight 	= 'bold';
 
+	//Event listener to initiate validation
 	m_Form.addEventListener("submit", function(event)
 	{
 		var invalidInput = false;
@@ -60,7 +62,7 @@ window.addEventListener('load', function(event)
 
 	});
 
-
+	//Checks if the name entered is valid
 	function checkNameValidation()
 	{
 		var isValid = true;
@@ -84,6 +86,7 @@ window.addEventListener('load', function(event)
 		return isValid;
 	}
 
+	//Checks if the username entered is not too short
 	function checkUserNameValidation()
 	{
 		var isValid = true;
@@ -99,6 +102,7 @@ window.addEventListener('load', function(event)
 		return isValid;
 	}
 
+	//Checks if the email is a valid email that we can handle
 	function checkEmailValidation()
 	{
 		var isValid = true;
@@ -126,6 +130,7 @@ window.addEventListener('load', function(event)
 		return isValid;
 	}
 
+	//Checks if the password is too short
 	function checkPasswordValidation()
 	{
 		var isValid = true;
@@ -141,6 +146,7 @@ window.addEventListener('load', function(event)
 		return isValid;
 	}
 
+	//Checks if the re entered password is the same as the original entered password
 	function checkPasswordReentryValidation()
 	{
 		var isValid = true;

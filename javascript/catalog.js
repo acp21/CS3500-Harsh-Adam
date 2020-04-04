@@ -1,7 +1,7 @@
 //Wait for the page to finish loading
 window.addEventListener('load', function(event)
 {	
-	//Handle Flying in the vertical navigation
+	//Handle Flying in the vertical navigation bar from the right
 	document.querySelectorAll("ul.main_page_vertical_nav")[0].style.transform = 'translateX(22em)';
 	document.querySelectorAll("ul.main_page_vertical_nav")[0].style.transition = 'transform 0.6s linear 0s';
 
@@ -23,6 +23,7 @@ window.addEventListener('load', function(event)
 		}
 	});
 
+	//Checks if the product should be seen based on the location of it on the screen
 	function checkIfProductShouldBeSeen(product)
 	{
 		var shouldBeInView = false;
@@ -37,16 +38,18 @@ window.addEventListener('load', function(event)
 		return shouldBeInView;
 	}
 
+	//Animates a product onto the screen
 	function animateProductOnScreen_Callback(elemntId)
 	{
 		m_Products[elemntId].style.opacity = "100%";
-		m_Products[elemntId].style.transition = '4.5s opacity';
+		m_Products[elemntId].style.transition = '2.5s opacity';
 	}
 
+	//Fades a product off of the screen
 	function unanimateProductFromScreen_Callback(elemntId)
 	{
 		m_Products[elemntId].style.opacity = "0%";
-		m_Products[elemntId].style.transition = '4s opacity';
+		m_Products[elemntId].style.transition = '2.5s opacity';
 	}
 
 	//Handle highlighting what product we are on in the vertical nav bar
@@ -89,6 +92,7 @@ window.addEventListener('load', function(event)
 	var m_PurchaseButton = document.querySelectorAll("button.place_order_button")[0];
 	var m_InputFields = document.querySelectorAll(".form-control");
 
+	//event listener that will validate the input fields
 	m_PurchaseButton.addEventListener("click", function(event)
 	{
 		var invalidInput = false;
@@ -118,7 +122,7 @@ window.addEventListener('load', function(event)
 			invalidInput = true;
 		}
 
-		if(!checkDataValidation())
+		if(!checkDateValidation())
 		{
 			invalidInput = true;
 		}
@@ -139,6 +143,7 @@ window.addEventListener('load', function(event)
 		}
 	});
 
+	//Checks to see if the name field is a valid input
 	function checkNameValidation()
 	{
 		var firstNameValid = true;
@@ -163,6 +168,7 @@ window.addEventListener('load', function(event)
 		return (firstNameValid && lastNameValid);
 	}
 
+	//Checks the validation of the street address input field
 	function checkStreetAddressValidation()
 	{
 		var isValid = true;
@@ -179,6 +185,7 @@ window.addEventListener('load', function(event)
 		return isValid;
 	}
 
+	//Checks the validation of the city and state input field
 	function checkCityStateValidation()
 	{
 		var isValid = true;
@@ -195,13 +202,14 @@ window.addEventListener('load', function(event)
 		return isValid;
 	}
 
+	//Checks the validation of the zip code
 	function checkZipCodeValidation()
 	{
 		var isValid = true;
 
 		var zipInput = m_InputFields[5];
 
-		if(zipInput.value.length != 5 || isNaN(parseInt(zipInput.value)))
+		if(zipInput.value.length != 5 || !/^[0-9]*$/.test(zipInput.value))
 		{
 			isValid = false;
 		}
@@ -211,13 +219,14 @@ window.addEventListener('load', function(event)
 		return isValid;
 	}
 
+	//Checks if the card given is a valid card number
 	function checkCardNumberValidation()
 	{
 		var isValid = true;
 
 		var cardInput = m_InputFields[6];
 
-		if(cardInput.value.length != 16 || isNaN(parseInt(cardInput.value)))
+		if(cardInput.value.length != 16 || !/^[0-9]*$/.test(cardInput.value))
 		{
 			isValid = false;
 		}
@@ -227,7 +236,8 @@ window.addEventListener('load', function(event)
 		return isValid;
 	}
 
-	function checkDataValidation()
+	//Checks to see if the expiration date is valid 
+	function checkDateValidation()
 	{
 		var isValid = true;
 
@@ -245,13 +255,14 @@ window.addEventListener('load', function(event)
 		return isValid;
 	}
 
+	//Checks to see if cvv is a valid number
 	function checkCvvValidation()
 	{
 		var isValid = true;
 
 		var cvvInput = m_InputFields[8];
 
-		if(cvvInput.value.length != 3 || isNaN(parseInt(cvvInput.value)))
+		if(cvvInput.value.length != 3 || !/^[0-9]*$/.test(cvvInput.value))
 		{
 			isValid = false;
 		}

@@ -10,7 +10,7 @@ window.addEventListener('load', function(event)
 	//Animate writing the mission statement
 	var loopCtr = 0;
 	
-
+	//Function that handles writing on the screen
 	function missionStatementWriterHandler()
 	{
 		if(loopCtr < MISSION_STATEMENT.length)
@@ -30,8 +30,6 @@ window.addEventListener('load', function(event)
 	//Handle highlighting what section we are on in the vertical nav bar
 	var m_PageSections = document.querySelectorAll("div.row");
 	var m_VerticalNavEntries = document.querySelectorAll("ul.main_page_vertical_nav li a");
-
-	console.log(m_VerticalNavEntries);
 
 	m_PageSections.forEach(function(section)
 	{

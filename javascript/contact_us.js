@@ -1,6 +1,7 @@
 //Wait for the page to finish loading
 window.addEventListener('load', function(event)
 {
+	//Handle form validation for the contact us form
 	const MUST_CONTAIN_SUBSTRINGS 	= ["@", ".com"];
 	const MINIMUM_EMAIL_LENGTH 		= MUST_CONTAIN_SUBSTRINGS[0].length + MUST_CONTAIN_SUBSTRINGS[1].length + 2;
 
@@ -10,6 +11,7 @@ window.addEventListener('load', function(event)
 	var m_MessageInput 	= document.querySelectorAll(".form-control")[3];
 	var m_SubmitButton 	= document.querySelectorAll("button")[0];
 
+	//Event listener to handle the validation
 	m_SubmitButton.addEventListener("click", function(event)
 	{
 		var invalidInput = false;
@@ -40,6 +42,7 @@ window.addEventListener('load', function(event)
 		}
 	});
 
+	//Check if entered name is valid
 	function checkNameValidation()
 	{
 		var isValid = true;
@@ -63,6 +66,7 @@ window.addEventListener('load', function(event)
 		return isValid;
 	}
 
+	//Check if entered email is valid
 	function checkEmailValidation()
 	{
 		var isValid = true;
@@ -90,6 +94,7 @@ window.addEventListener('load', function(event)
 		return isValid;
 	}
 
+	//Check if the subject line isn't blank
 	function checkSubjectValidation()
 	{
 		var isValid = true;
@@ -104,6 +109,7 @@ window.addEventListener('load', function(event)
 		return isValid;
 	}
 
+	//Check if the message isn't blank
 	function checkMessageValidation()
 	{
 		var isValid = true;
