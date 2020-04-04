@@ -71,3 +71,9 @@ footer
   width: 100%;
   margin: .5em 0em .5em 0em;
 }
+
+/*Format all the pictures so that js can animate*/
+img.pic
+{
+  opacity: 0%;
+}
