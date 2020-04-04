@@ -2,7 +2,7 @@
 window.addEventListener('load', function(event)
 {
 	//Handle form validation for the contact us form
-	const MUST_CONTAIN_SUBSTRINGS 	= ["@", ".com"];
+	const MUST_CONTAIN_SUBSTRINGS 	= ["@", ".com", ".edu"];
 	const MINIMUM_EMAIL_LENGTH 		= MUST_CONTAIN_SUBSTRINGS[0].length + MUST_CONTAIN_SUBSTRINGS[1].length + 2;
 
 	var m_NameInput		= document.querySelectorAll(".form-control")[0];
@@ -75,19 +75,20 @@ window.addEventListener('load', function(event)
 		{
 			isValid = false;
 		} 
-		else if(!m_EmailInput.value.includes(MUST_CONTAIN_SUBSTRINGS[1]))
+		
+		if(!m_EmailInput.value.includes(MUST_CONTAIN_SUBSTRINGS[1]))
+		{
+			if(!m_EmailInput.value.includes(MUST_CONTAIN_SUBSTRINGS[2]))
+			{
+				isValid = false;
+			}
+		}
+		
+		if(m_EmailInput.value.length < MINIMUM_EMAIL_LENGTH)
 		{
 			isValid = false;
 		}
-		else if(m_EmailInput.value.length < MINIMUM_EMAIL_LENGTH)
-		{
-			isValid = false;
-		}
-		else
-		{
-			//Form input is valid
-		}
-
+		
 		m_EmailInput.style.color = (isValid) ? 'black' : 'red';
 		m_EmailInput.style.border = (isValid) ? '0.05em solid grey' : '0.15em solid red';
 

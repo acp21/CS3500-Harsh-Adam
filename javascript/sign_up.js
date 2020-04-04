@@ -5,7 +5,7 @@ window.addEventListener('load', function(event)
 	const MINIMUM_USERNAME_LENGTH 	= 5;
 	const MINIMUM_PASSWORD_LENGTH 	= 7;
 
-	const MUST_CONTAIN_SUBSTRINGS 	= ["@", ".com"];
+	const MUST_CONTAIN_SUBSTRINGS 	= ["@", ".com", ".edu"];
 	const MINIMUM_EMAIL_LENGTH 		= MUST_CONTAIN_SUBSTRINGS[0].length + MUST_CONTAIN_SUBSTRINGS[1].length + 2;
 
 	var m_Form 						= document.querySelectorAll("form")[0];
@@ -111,17 +111,18 @@ window.addEventListener('load', function(event)
 		{
 			isValid = false;
 		} 
-		else if(!m_EmailInput.value.includes(MUST_CONTAIN_SUBSTRINGS[1]))
+		
+		if(!m_EmailInput.value.includes(MUST_CONTAIN_SUBSTRINGS[1]))
+		{
+			if(!m_EmailInput.value.includes(MUST_CONTAIN_SUBSTRINGS[2]))
+			{
+				isValid = false;
+			}
+		}
+		
+		if(m_EmailInput.value.length < MINIMUM_EMAIL_LENGTH)
 		{
 			isValid = false;
-		}
-		else if(m_EmailInput.value.length < MINIMUM_EMAIL_LENGTH)
-		{
-			isValid = false;
-		}
-		else
-		{
-			//Form input is valid
 		}
 
 		m_EmailInput.style.color = (isValid) ? 'black' : 'red';

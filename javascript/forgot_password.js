@@ -2,11 +2,10 @@
 window.addEventListener('load', function(event)
 {
 	//Validate Form Input
-	const MUST_CONTAIN_SUBSTRINGS = ["@", ".com"];
+	const MUST_CONTAIN_SUBSTRINGS = ["@", ".com", ".edu"];
 	const MINIMUM_EMAIL_LENGTH = MUST_CONTAIN_SUBSTRINGS[0].length + MUST_CONTAIN_SUBSTRINGS[1].length + 2;
 
 	var m_Form = document.querySelectorAll("form")[0];
-	console.log(m_Form);
 
 	var m_EmailInput = document.querySelectorAll("form div input")[0];
 
@@ -25,17 +24,18 @@ window.addEventListener('load', function(event)
 		{
 			invalidInput = true;
 		} 
-		else if(!m_EmailInput.value.includes(MUST_CONTAIN_SUBSTRINGS[1]))
+		
+		if(!m_EmailInput.value.includes(MUST_CONTAIN_SUBSTRINGS[1]))
+		{
+			if(!m_EmailInput.value.includes(MUST_CONTAIN_SUBSTRINGS[2]))
+			{
+				invalidInput = true;
+			}
+		}
+		
+		if(m_EmailInput.value.length < MINIMUM_EMAIL_LENGTH)
 		{
 			invalidInput = true;
-		}
-		else if(m_EmailInput.value.length < MINIMUM_EMAIL_LENGTH)
-		{
-			invalidInput = true;
-		}
-		else
-		{
-			//Form input is valid
 		}
 
 		//Check if any input is invalid
