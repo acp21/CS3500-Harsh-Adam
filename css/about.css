@@ -8,6 +8,12 @@
     display: flex;
     justify-content: center;
 }
+/*Formats each section so js can animate*/
+div.section
+{
+    opacity: 0%;
+}
+
 /* Format overall layout of team members */
 .team{
     display: flex;
