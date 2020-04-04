@@ -76,4 +76,110 @@ window.addEventListener('load', function(event)
 
 	//Call the function to start the "typing"
 	catchPhraseWriter();	
+
+	//Handle form validation for the buy now form
+	const MIN_STREET_ADDRESS_LENGTH = 8;
+	const MIN_CITY_LENGTH = 3;
+
+	var m_PurchaseButton = document.querySelectorAll("div.modal-footer button")[0];
+	var m_InputFields = document.querySelectorAll(".form-control");
+
+	m_PurchaseButton.addEventListener("click", function(event)
+	{
+		var invalidInput = false;
+
+		if(!checkNameValidation())
+		{
+			invalidInput = true;
+		}
+
+		if(!checkStreetAddressValidation())
+		{
+			invalidInput = true;
+		}
+
+		if(!checkCityValidation())
+		{
+			invalidInput = true;
+		}
+
+		if(!checkZipCodeValidation())
+		{
+			invalidInput = true;
+		}
+
+		if(invalidInput)
+		{
+			m_PurchaseButton.setAttribute("data-dismiss", "");
+		}
+		else
+		{
+			m_PurchaseButton.setAttribute("data-dismiss", "modal");
+			alert("Thank you for your purchasae!");
+		}
+	});
+
+	function checkNameValidation()
+	{
+		var isValid = true;
+
+		var nameInput = m_InputFields[0];
+
+		if(nameInput.value.length == 0 || !nameInput.value.includes(" "))
+		{
+			isValid = false;
+		}
+
+		nameInput.style.border = (isValid) ? '0.15em solid grey' : '0.15em solid red';
+
+		return isValid;
+	}
+
+	function checkStreetAddressValidation()
+	{
+		var isValid = true;
+
+		var streetAddressInput = m_InputFields[1];
+
+		if(streetAddressInput.value.length < MIN_STREET_ADDRESS_LENGTH || !streetAddressInput.value.includes(" "))
+		{
+			isValid = false;
+		}
+
+		streetAddressInput.style.border = (isValid) ? '0.15em solid grey' : '0.15em solid red';
+
+		return isValid;
+	}
+
+	function checkCityValidation()
+	{
+		var isValid = true;
+
+		var cityInput = m_InputFields[2];
+
+		if(cityInput.value.length < MIN_CITY_LENGTH)
+		{
+			isValid = false;
+		}
+
+		cityInput.style.border = (isValid) ? '0.15em solid grey' : '0.15em solid red';
+
+		return isValid;
+	}	
+
+	function checkZipCodeValidation()
+	{
+		var isValid = true;
+
+		var zipInput = m_InputFields[3];
+
+		if(zipInput.value.length != 5 || isNaN(parseInt(zipInput.value)))
+		{
+			isValid = false;
+		}
+
+		zipInput.style.border = (isValid) ? '0.15em solid grey' : '0.15em solid red';
+
+		return isValid;
+	}
 });
