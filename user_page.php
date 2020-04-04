@@ -67,7 +67,7 @@
 					//User is registering and logging in
 					$name = explode(" ", $_POST['full_name']);
 					$userName = $_POST['user_name'];
-					$email = "null";//$_POST['user_email'];
+					$email = $_POST['user_email'];
 					$password = $_POST['user_password'];
 
 					$query = "INSERT INTO users (FirstName, LastName, Username, Email, Password) VALUES ('" . $name[0] . "', '" . $name[1] . "', '" . $userName . "', '" . $email . "', '" . $password . "')";
