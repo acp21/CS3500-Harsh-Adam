@@ -6,7 +6,14 @@
 	background-color: #21A1CB;
 	padding: 0.5em 0em 0.5em 0em;
 	margin: 0.5em 0em 0.5em 0em;
+	opacity: 0%;
 }
+/* Formatting Input Field Lables */
+label
+{
+	margin-top: 0.5em;
+}
+
 /* Formatting submit btn */
 .btn
 {

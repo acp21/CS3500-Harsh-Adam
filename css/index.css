@@ -2,8 +2,10 @@
 .main_page_vertical_nav
 {
 	position: fixed;
+/*	top: 10em;
+	left: 2em;*/
 	top: 10em;
-	left: 2em;
+	left: -20em;
 	background-color: #629fb299;
 	padding: 10em 0em 10em 0em;
 }
