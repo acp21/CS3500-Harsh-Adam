@@ -42,7 +42,7 @@ window.addEventListener('load', function(event)
 	}
 
 	//Animate the Product Catch Phrase by typing it out
-	const CATCH_PHRASES = ["Years ahead of the competetion", "A modern tool for the modern consumer"];
+	const CATCH_PHRASES = ["","Years ahead of the competetion", "A modern tool for the modern consumer"];
 
 	var loopCtr = 0;
 
@@ -51,27 +51,35 @@ window.addEventListener('load', function(event)
 	{
 		//Figure out what html page invoked our js function and select the 
 		//appropriate catch phrase for that page
-		var htmlPage = location.pathname.split('/').pop();
 
-		var indexOfCatchPhrase = 0;
+		// CODE NO LONGER NEEDED
+		// var htmlPage = location.pathname.split('/').pop();
 
-		if(htmlPage === "product.html") 
-		{
-			indexOfCatchPhrase = 0;
-		} 
-		else if(htmlPage === "watch.html")
-		{
-			indexOfCatchPhrase = 1;
-		}
-		else
-		{
-			// the invoker is neither of the pages
-		}
+		// var indexOfCatchPhrase = 0;
 
-		if(loopCtr < CATCH_PHRASES[indexOfCatchPhrase].length)
+		// if(htmlPage === "product.html") 
+		// {
+		// 	indexOfCatchPhrase = 0;
+		// } 
+		// else if(htmlPage === "watch.html")
+		// {
+		// 	indexOfCatchPhrase = 1;
+		// }
+		// else
+		// {
+		// 	// the invoker is neither of the pages
+		// }
+
+		// Getting passed string for catch phrase writer
+		console.log("This ran")
+		var urlParams = new URLSearchParams(window.location.search);
+		var productID = urlParams.get('productID');
+
+		// Get product id from passed query string, use that as index for CATCH_PHRASES
+		if(loopCtr < CATCH_PHRASES[productID].length)
 		{
 			//Append a character to the mission statement
-			document.querySelectorAll("div.catch_phrase")[0].innerHTML += CATCH_PHRASES[indexOfCatchPhrase].charAt(loopCtr);
+			document.querySelectorAll("div.catch_phrase")[0].innerHTML += CATCH_PHRASES[productID].charAt(loopCtr);
 			//Preincrement for effeciency
 			++loopCtr;
 			//Randomize the timeout to give more of a typing feeling
