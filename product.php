@@ -2,6 +2,7 @@
 <!-- ADAM POHL -->
 <!-- WRITTEN FOR CS3500 -->
 <?php
+  include 'specifications.inc.php';
   // Connect to database
   try{
     $connString = "mysql:host=localhost;dbname=authorized_users";
@@ -121,10 +122,12 @@
               <!-- Laptop specs for actual laptop found on Newegg -->
                 <ul class="jumbotron">
                   <li class="specs">PRODUCT SPECIFICATIONS</li>
-                  <li>Intel Core i5 10th Gen 1035G1</li>
-                  <li>8 GB LPDDR4 Memory 512 GB SSD</li>
-                  <li>Intel UHD Graphics</li>
-                  <li>1920 x 1080 Display</li>
+                  <?php
+                    // Loop through all values in $specs[$id] to get product specifications
+                    foreach($specs[$id] as $val){
+                      echo '<li>' . $val . '</li>';
+                    }
+                  ?>
                 </ul>
             </div>
             <div class="row info_section">
