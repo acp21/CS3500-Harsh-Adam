@@ -37,7 +37,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
--- Added by Adam Pohl, may need to remove if causes issues
+-- Creating new `products` table for dynamic products page
 CREATE TABLE `products` (
   `ID` int NOT NULL,
   `Name` varchar(100) NOT NULL,
@@ -53,6 +53,7 @@ INSERT INTO `users` (`FirstName`, `LastName`, `Email`, `Username`, `Password`) V
 ('Supreme', 'Overlord', 'no@g.com', 'root', 'sysadmin');
 COMMIT;
 
+-- Dumping data for table `products`
 INSERT INTO `products` VALUES (1, 'ProBook', 'Years ahead of the competetion', 'The ProBook is the laptop for the modern consumer. Unlike other laptops, the ProBook can run for days at a time without requiring a recharge. This flexibility means the device is perfect for the busy worker. Whether you are working on school, your business, or for leisure, the ProBook will provide you with the power that you need.');
 INSERT INTO `products` VALUES (2, 'ProWatch', 'A modern tool for the modern consumer', "With the ProWatch, the power of portability is in your hands. Despite its small form factor, the ProWatch packs plenty of power. The ability to play music and make calls help alleviate the need to always be carrying a phone while fitness features like the heart rate tracker keep an eye on what's most important, your health.");
 INSERT INTO `products` VALUES (3, 'ProPhone', 'PHONE SLOGAN', 'PHONE DESCRIPTION');

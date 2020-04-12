@@ -107,20 +107,6 @@
                       $output .= '</div>';
                       echo $output;
                     ?>
-
-
-                    <!-- Old Carousel HTML NO LONGER NEEDED -->
-                    <!-- <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="images/lap-front.jpg" alt="Front of laptop" width="1100" height="500">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="images/lap-side.jpg" alt="Side view of laptop" width="1100" height="500">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="images/lap-back.jpg" alt="Back of laptop" width="1100" height="500">
-                      </div>
-                    </div> -->
                     <!-- Left and right controls -->
                     <a class="carousel-control-prev" href="#demo" data-slide="prev">
                       <i class="fas fa-arrow-left"></i>
@@ -144,9 +130,14 @@
             <div class="row info_section">
               <div class="col-md-2">
                   <!-- Left images -->
-                  <img class="pic" src="images/lap2.jpg" alt="">
-                  <img class="pic" src="images/lap2-angle.jpg" alt="">
-                  <img class="pic" src="images/lap2-side.jpg" alt="">
+                  <?php
+                    // Rewrote image printing using php loops
+                    $output = "";
+                    for($i = 1; $i <= 3; $i++){
+                      $output .= '<img class="pic" src="images/products/' .$id . '-left' . $i . '.jpg" alt="">';
+                    }
+                    echo $output;
+                  ?>
               </div>
               <div class="col-md-8">
                   <!-- Product Descrption -->
@@ -161,9 +152,13 @@
               </div>
               <div class="col-md-2">
                   <!-- Right Images -->
-                  <img class="pic" src="images/lap3-front.jpg" alt="">
-                  <img class="pic" src="images/lap3-right.jpeg" alt="">
-                  <img class="pic" src="images/lap3-top.jpeg" alt="">
+                  <?php
+                    $output = "";
+                    for($i = 1; $i <= 3; $i++){
+                      $output .= '<img class="pic" src="images/products/' .$id . '-right' . $i . '.jpg" alt="">';
+                    }
+                    echo $output;
+                  ?>
               </div>
             </div>
             <!-- Buy now button opens a modal for user to enter details -->
