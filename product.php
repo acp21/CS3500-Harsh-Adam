@@ -3,13 +3,10 @@
 <!-- WRITTEN FOR CS3500 -->
 <?php
   include 'specifications.inc.php';
+  include 'config.inc.php';
   // Connect to database
   try{
-    $connString = "mysql:host=localhost;dbname=authorized_users";
-    $user = "testuser";
-    $pass = "mypassword";
-
-    $pdo = new PDO($connString, $user, $pass);
+    $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
   }
   catch(PDOException $e){
       die($e -> getMessage());

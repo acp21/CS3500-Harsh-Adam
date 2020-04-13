@@ -1,3 +1,8 @@
+<?php 
+	//Include Data Base Config
+	include 'config.inc.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,12 +53,6 @@
     	<?php  
 			try
 			{
-				define('DBHOST', '');
-				define('DBNAME', 'authorized_users');
-				define('DBUSER', 'testuser');
-				define('DBPASS', 'mypassword');
-				define('DBCONNSTRING','mysql:dbname=authorized_users;charset=utf8mb4;');
-
 				$m_FirstName = '';
 				$m_LastName = '';
 
@@ -195,7 +194,8 @@
 			}
 			catch (PDOException $e)
 			{
-				die($e->getmessage());
+				//Unable to Connect to Data Base
+    			echo "<h1 class='jumbotron unauthorized_user'>Unable to Authenticate</h1>";
 			}
     	?>
 	</div>
