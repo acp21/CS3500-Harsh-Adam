@@ -7,6 +7,8 @@
   // Connect to database
   try{
     $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
+
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }
   catch(PDOException $e){
       die($e -> getMessage());
@@ -142,7 +144,7 @@
               <div class="col-md-8">
                   <!-- Product Descrption -->
                   <?php
-                    $sql = "SELECT * FROM Products WHERE ID='" . $id . "'";
+                    $sql = "SELECT * FROM products WHERE ID='" . $id . "'";
                     $product = $pdo -> query($sql);
                     $row = $product -> fetch();
                     $description = '<p class="desc">' . $row["Description"] . "</p>";
