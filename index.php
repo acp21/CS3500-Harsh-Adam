@@ -34,6 +34,9 @@
             <a class="nav-link" href="catalog.html">Products</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="weather.php">Weather</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="contact_us.html">Contact Us</a>
           </li>
           <li class="nav-item">

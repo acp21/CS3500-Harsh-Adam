@@ -5,52 +5,57 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-  <title>Atlas Corporation</title>
+    <title>Atlas Corporation</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/navbar.css">
-  <link rel="stylesheet" type="text/css" href="css/user_page.css">
-  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="css/user_page.css">
+
 </head>
+
 <body>
 
-	<!--   Main Bootstrap Container -->
-	<div class="container-fluid">
+    <!--   Main Bootstrap Container -->
+    <div class="container-fluid">
 
-		<!-- Nav Bar Container -->
-		<div class="row">
-	      	<!-- Navigation Bar -->
-      		<nav class="navbar navbar-expand-sm  navbar-dark fixed-top" id="navigation">
-	       		<!-- Brand/Logo -->
-	       		<a class="navbar-brand" href="index.php">
-	          		<img src="images/Company-Logo.png" alt="Atlas Corporation" title="Atlas Corporation">
-	        	</a>
-		        <!-- Pages -->
-		        <ul class="navbar-nav">
-	          		<li class="nav-item">
-	            		<a class="nav-link" href="index.php">Home</a>
-	          		</li>
-	          		<li class="nav-item">
-	            		<a class="nav-link" href="about.html">About Us</a>
-	      			</li>
-	          		<li class="nav-item">
-	            		<a class="nav-link" href="catalog.html">Products</a>
-	          		</li>
-	          		<li class="nav-item">
-	            		<a class="nav-link" href="contact_us.html">Contact Us</a>
-	          		</li>
-	          		<li class="nav-item">
-	            		<a class="nav-link" href="log_in.html">Log In</a>
-	          		</li>
-	        	</ul> 
-      		</nav>  
-    	</div>
+        <!-- Nav Bar Container -->
+        <div class="row">
+            <!-- Navigation Bar -->
+            <nav class="navbar navbar-expand-sm  navbar-dark fixed-top" id="navigation">
+                <!-- Brand/Logo -->
+                <a class="navbar-brand" href="index.php">
+                    <img src="images/Company-Logo.png" alt="Atlas Corporation" title="Atlas Corporation">
+                </a>
+                <!-- Pages -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="weather.php">Weather</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact_us.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="log_in.html">Log In</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
 
-    	<?php  
+        <?php  
 			try
 			{
 				$m_FirstName = '';
@@ -198,6 +203,7 @@
     			echo "<h1 class='jumbotron unauthorized_user'>Unable to Authenticate</h1>";
 			}
     	?>
-	</div>
+    </div>
 </body>
+
 </html>
