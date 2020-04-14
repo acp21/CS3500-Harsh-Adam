@@ -1,3 +1,8 @@
+<?php 
+	//Include Data Base Config
+	include 'config.inc.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +26,13 @@
 	      	<!-- Navigation Bar -->
       		<nav class="navbar navbar-expand-sm  navbar-dark fixed-top" id="navigation">
 	       		<!-- Brand/Logo -->
-	       		<a class="navbar-brand" href="index.html">
+	       		<a class="navbar-brand" href="index.php">
 	          		<img src="images/Company-Logo.png" alt="Atlas Corporation" title="Atlas Corporation">
 	        	</a>
 		        <!-- Pages -->
 		        <ul class="navbar-nav">
 	          		<li class="nav-item">
-	            		<a class="nav-link" href="index.html">Home</a>
+	            		<a class="nav-link" href="index.php">Home</a>
 	          		</li>
 	          		<li class="nav-item">
 	            		<a class="nav-link" href="about.html">About Us</a>
@@ -48,12 +53,6 @@
     	<?php  
 			try
 			{
-				define('DBHOST', '');
-				define('DBNAME', 'authorized_users');
-				define('DBUSER', 'testuser');
-				define('DBPASS', 'mypassword');
-				define('DBCONNSTRING','mysql:dbname=authorized_users;charset=utf8mb4;');
-
 				$m_FirstName = '';
 				$m_LastName = '';
 
@@ -152,7 +151,7 @@
 					echo "				  <div class='card-body'>";
 					echo "				    <h5 class='card-title'>Pro<br>Book</h5>";
 					echo "				    <h6 class='card-subtitle mb-2 text-muted'>Laptop<h6>";
-					echo "				    <a href='product.html' class='card-link'>Learn More</a>";
+					echo "				    <a href='product.php?productID=1' class='card-link'>Learn More</a>";
 					echo "				  </div> ";
 					echo "				</div>";
 					echo "			</div>";
@@ -161,7 +160,7 @@
 					echo "				  <div class='card-body'>";
 					echo "				    <h5 class='card-title'>Pro<br>Watch</h5>";
 					echo "				    <h6 class='card-subtitle mb-2 text-muted'>Watch<h6>";
-					echo "				    <a href='watch.html' class='card-link'>Learn More</a>";
+					echo "				    <a href='product.php?productID=2' class='card-link'>Learn More</a>";
 					echo "				  </div> ";
 					echo "				</div>";
 					echo "			</div>";
@@ -195,7 +194,8 @@
 			}
 			catch (PDOException $e)
 			{
-				die($e->getmessage());
+				//Unable to Connect to Data Base
+    			echo "<h1 class='jumbotron unauthorized_user'>Unable to Authenticate</h1>";
 			}
     	?>
 	</div>

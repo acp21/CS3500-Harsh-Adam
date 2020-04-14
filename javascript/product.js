@@ -49,29 +49,7 @@ window.addEventListener('load', function(event)
 	//Function that handles writing on the screen
 	function catchPhraseWriter()
 	{
-		//Figure out what html page invoked our js function and select the 
-		//appropriate catch phrase for that page
-
-		// CODE NO LONGER NEEDED
-		// var htmlPage = location.pathname.split('/').pop();
-
-		// var indexOfCatchPhrase = 0;
-
-		// if(htmlPage === "product.html") 
-		// {
-		// 	indexOfCatchPhrase = 0;
-		// } 
-		// else if(htmlPage === "watch.html")
-		// {
-		// 	indexOfCatchPhrase = 1;
-		// }
-		// else
-		// {
-		// 	// the invoker is neither of the pages
-		// }
-
-		// Getting passed string for catch phrase writer
-		console.log("This ran")
+		//Figure out what product we have to display info for
 		var urlParams = new URLSearchParams(window.location.search);
 		var productID = urlParams.get('productID');
 

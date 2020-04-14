@@ -3,13 +3,12 @@
 <!-- WRITTEN FOR CS3500 -->
 <?php
   include 'specifications.inc.php';
+  include 'config.inc.php';
   // Connect to database
   try{
-    $connString = "mysql:host=localhost;dbname=authorized_users";
-    $user = "testuser";
-    $pass = "mypassword";
+    $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
 
-    $pdo = new PDO($connString, $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }
   catch(PDOException $e){
       die($e -> getMessage());
@@ -50,13 +49,13 @@
             <div class="row">
                 <nav class="navbar navbar-expand-sm  navbar-dark fixed-top" id="navigation">
                     <!-- Brand/Logo -->
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="index.php">
                       <img src="images/Company-Logo.png" alt="Atlas Corporation" title="Atlas Corporation">
                     </a>
                     <!-- Pages -->
                     <ul class="navbar-nav">
                       <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.php">Home</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="about.html">About Us</a>
@@ -147,7 +146,7 @@
               <div class="col-md-8">
                   <!-- Product Descrption -->
                   <?php
-                    $sql = "SELECT * FROM Products WHERE ID='" . $id . "'";
+                    $sql = "SELECT * FROM products WHERE ID='" . $id . "'";
                     $product = $pdo -> query($sql);
                     $row = $product -> fetch();
                     $description = '<p class="desc">' . $row["Description"] . "</p>";
