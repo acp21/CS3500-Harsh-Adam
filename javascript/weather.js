@@ -1,3 +1,7 @@
+// CS3500 FINAL PROJECT
+// Javascript page to operate weather.php
+// Written by Adam Pohl
+
 $(document).ready(function(){
 
     var api = "http://api.openweathermap.org/data/2.5/forecast?q=";
@@ -53,8 +57,5 @@ $(document).ready(function(){
         })
         console.log("Getting images");
         getCityImage(city);
-        console.log("CITY IMAGE");
-        // console.log(cityImg);
-        // $(".search-image").find("img").attr("src", cityImg);
     });
 });
