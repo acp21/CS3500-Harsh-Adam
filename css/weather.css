@@ -23,8 +23,5 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-}
-
-.search-image{
-    background-color: blue;
+    border: .5em groove lightgrey;
 }

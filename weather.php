@@ -57,7 +57,7 @@
             <!-- Pages -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="about.html">About Us</a>
@@ -81,7 +81,8 @@
                 <p class="intro">Here at Atlas Corp, we work to provide the best service to our customers and employees.
                     We do this not only with products, but with live services. We are very proud to say we
                     have collaborated with OpenWeatherMap to bring this live weather service straight to you.
-                    Simply input your city and click submit to get the current weather in that city.
+                    Simply input your city and click submit to get the current weather in that city. Well known cities will also
+                    have their image displayed next to the forecast
                 </p>
             </div>
         </div> <!-- End row -->
@@ -109,7 +110,7 @@
 
             <div class="col-md-6">
                 <div class="search-image">
-                    MORE STUFF
+                    <img id="city" src="">
                 </div>
             </div>
         </div>

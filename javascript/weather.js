@@ -4,8 +4,10 @@ $(document).ready(function(){
     var apiID = "d2939654a3352a9dc8b97495cdb98211";
 
     function getCityImage(city){
-        var apiCall = "https://en.wikipedia.org/w/api.php?action=query&titles=" +  city + "&prop=pageimages&pithumbsize=300&format=json";
+        var apiCall = "https://en.wikipedia.org/w/api.php?action=query&titles=" +  city + "&prop=pageimages&pithumbsize=1000&format=json";
+
         console.log(apiCall);
+        // Make call to wikipedias api to get image url
         $.ajax({
             url: apiCall,
             contentType: "application/json",
@@ -13,32 +15,36 @@ $(document).ready(function(){
             success: function(result){
                 console.log("Got images");
                 console.log(result);
-                var pages = result["query"]["pages"]; //[0]["thumbnail"]["source"];
+                var pages = result["query"]["pages"];
+                // For loop gets first page without needing to know page id
                 for(var key in pages){
-                    console.log(pages[key]["thumbnail"]["source"]);
+                    var imgSrc = (pages[key]["thumbnail"]["source"]);
+                    console.log("SRC");
+                    console.log(imgSrc);
+                    $(".search-image").find("img").attr("src", imgSrc);
                 }
-
-                // console.log(imgSrc)
-                // query.pages[17867].thumbnail
             }
 
         })
 
     }
     
-
+    // Wait for click on submit button
     $(".submit").on("click", function(event){
         target = event.target;
+        // Prepare api call strin
         var city = $("#data").val();
         api = api + city;
         api = api + "&APPID=";
         api = api + apiID;
+        // Make call to OpenWeatherMaps
         $.ajax({
             url: api,
             contentType: "application/json",
             dataType: 'jsonp',
             success: function(result){
                 console.log(result);
+                // Change value to farenheit and display temp and weather
                 var temp = result["list"][0]["main"]["temp"];
                 var weather = result["list"][0]["weather"][0]["main"];
                 $(".temp").find("h2").html(Math.round(temp * 9/5 -459.67));
@@ -47,5 +53,8 @@ $(document).ready(function(){
         })
         console.log("Getting images");
         getCityImage(city);
+        console.log("CITY IMAGE");
+        // console.log(cityImg);
+        // $(".search-image").find("img").attr("src", cityImg);
     });
 });
