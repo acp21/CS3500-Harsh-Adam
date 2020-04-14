@@ -151,8 +151,9 @@
                     $row = $product -> fetch();
                     $description = '<p class="desc">' . $row["Description"] . "</p>";
                     echo $description;
+                    $button = '<button type="button" class="btn btn-danger btn-lg"><a href="catalog.php?cart=' . $id . '">Add to Cart</a></button>';
+                    echo $button;
                   ?>
-                  <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#purchase_modal">BUY NOW</button>
               </div>
               <div class="col-md-2">
                   <!-- Right Images -->
