@@ -1,4 +1,15 @@
 <?php
+    include 'config.inc.php';
+    // Connect to DB
+    try{
+      $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
+  
+      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+    catch(PDOException $e){
+        die($e -> getMessage());
+    }
+
     session_start();
     $numVars = count($_GET);
     // Check if shopping cart exists
@@ -10,13 +21,19 @@
     if($numVars >= 1){
         // Get id of item user added
         $id = $_GET["cart"];
+        $sql = "SELECT * FROM products WHERE ID='" . $id . "'";
+        $product = $pdo -> query($sql);
+        $row = $product -> fetch();
         // Check if item is already in cart
         if(in_array($id, $_SESSION["cart"])){
-            echo "Item already in cart";
+            $js = '<script type="text/javascript">alert("The ' . $row["Name"] . ' is already in your cart.");</script>';
+            echo $js;
         }
         // If item is not in cart, add it
         else{
             array_push($_SESSION["cart"], $id);
+            $js = '<script type="text/javascript">alert("Thank you for adding the ' . $row["Name"] . ' to your cart.");</script>';
+            echo $js;
         }
     }
 
@@ -24,6 +41,7 @@
     foreach($_SESSION["cart"] as $val){
         echo $val . "<br>";
     }
+
 ?>
 
 <!DOCTYPE html>

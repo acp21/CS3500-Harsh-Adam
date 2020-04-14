@@ -108,6 +108,12 @@ input
 }
 
 
+/* Keeps button text from changing after click */
+.btn a, .btn a:link, .btn a:visited{
+	color: white;
+	text-decoration: none;
+}
+
 /*Footer Styling*/
 footer
 {
