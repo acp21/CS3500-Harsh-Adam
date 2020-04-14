@@ -33,6 +33,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/navbar.css">
         <link rel="stylesheet" type="text/css" href="css/product.css">
+        <!-- Catalog stylesheet included for modal formatting -->
+        <link rel="stylesheet" type="text/css" href="css/catalog.css">
         <!-- Google fonts link -->
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
         <!-- Font Awesome icon link -->
@@ -151,7 +153,7 @@
                     $description = '<p class="desc">' . $row["Description"] . "</p>";
                     echo $description;
                   ?>
-                  <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target=".modal">BUY NOW</button>
+                  <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#purchase_modal">BUY NOW</button>
               </div>
               <div class="col-md-2">
                   <!-- Right Images -->
@@ -165,100 +167,72 @@
               </div>
             </div>
             <!-- Buy now button opens a modal for user to enter details -->
-            <div class="modal fade" id="purchase">
-              <div class="modal-dialog modal-xl">
-                  <div class="modal-content">
-                    <!-- Modal header just has text -->
-                      <div class="modal-header">
-                          <h4 class="modal-title">Purchase Details</h4>
-                      </div>
-                      <!-- Modal body, contains form for input -->
-                      <div class="modal-body">
-                        <div class="contactform">
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label for="name"><b>Name</b></label>
-                              <input type="text" placeholder="Enter name" class="form-control" id="name" name="name">
-                            </div>
-                            <div class="col-md-6">
-                              <label for="address"><b>Street Address</b></label>
-                              <input type="text" placeholder="Enter Address" class="form-control" id="address" name="address">
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label for="city"><b>City</b></label>
-                              <input class="form-control" type="text" name="city" id="city" placeholder="Enter City">
-                            </div>
-                            <div class="col-md-6">
-                              <label for="zip"><b>Zip Code</b></label>
-                              <input class="form-control" type="text" name="zip" id="zip" placeholder="Enter zip code">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="state"><b>State</b></label>
-                            <!-- Drop down list containing all 50 states -->
-                            <select name="state" id="state" class="form-control">
-                              <option value="">AL</option>
-                              <option value="">AK</option>
-                              <option value="">AZ</option>
-                              <option value="">AR</option>
-                              <option value="">CA</option>
-                              <option value="">CO</option>
-                              <option value="">CT</option>
-                              <option value="">DE</option>
-                              <option value="">FL</option>
-                              <option value="">GA</option>
-                              <option value="">HI</option>
-                              <option value="">ID</option>
-                              <option value="">IL</option>
-                              <option value="">IN</option>
-                              <option value="">IA</option>
-                              <option value="">KS</option>
-                              <option value="">KY</option>
-                              <option value="">LA</option>
-                              <option value="">ME</option>
-                              <option value="">MD</option>
-                              <option value="">MA</option>
-                              <option value="">MI</option>
-                              <option value="">MN</option>
-                              <option value="">MS</option>
-                              <option value="">MO</option>
-                              <option value="">MT</option>
-                              <option value="">NE</option>
-                              <option value="">NV</option>
-                              <option value="">NH</option>
-                              <option value="">NJ</option>
-                              <option value="">NM</option>
-                              <option value="">NY</option>
-                              <option value="">NC</option>
-                              <option value="">ND</option>
-                              <option value="">OH</option>
-                              <option value="">OK</option>
-                              <option value="">OR</option>
-                              <option value="">PA</option>
-                              <option value="">RI</option>
-                              <option value="">SC</option>
-                              <option value="">SD</option>
-                              <option value="">TN</option>
-                              <option value="">TX</option>
-                              <option value="">UT</option>
-                              <option value="">VT</option>
-                              <option value="">VA</option>
-                              <option value="">WA</option>
-                              <option value="">WV</option>
-                              <option value="">WI</option>
-                              <option value="">WY</option>
-                            </select>
-                          </div>
-                      </div>
-                      <!-- Modal footer has enter btn -->
-                      <div class="modal-footer">
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Purchase</button>
-                      </div>
+            <div id="purchase_modal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
 
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Purchase Form</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Checkout Modal -->
+          <div class="modal-body">
+            <!-- Container for Modal Content -->
+            <div class="container">
+              <!-- Form to collect to input -->
+              <form class="checkout_form" method="POST">
+                <label class="checkout_info_label">Personal Information</label>
+                <!-- Name -->
+                <div class=row>
+                  <div class="col">
+                    <input type="text" name="firstName" class="form-control" placeholder="First Name" required>
                   </div>
-              </div>
+                  <div class="col">
+                    <input type="text" name="lastName" class="form-control" placeholder="Last Name" required>
+                  </div>
+                </div> 
+
+                <!-- Address -->
+                <div class=row>
+                  <input type="text" name="streetAddress" class="form-control" placeholder="Street Address" required><br>
+
+                  <input type="text" name="optionalAddress" class="form-control" placeholder="Apt, Suite, or Building (Optional)">
+                </div> 
+                <div class=row>
+                  <div class="col">
+                    <input type="text" name="location" class="form-control" placeholder="City, State" required>
+                  </div>
+                  <div class="col">
+                    <input type="text" name="zipcode" class="form-control" placeholder="Zip Code" required>
+                  </div>
+                </div> 
+
+                <label class="checkout_info_label">Billing Information</label>
+                <!-- Credit Card -->
+                <div class="row">
+                  <input type="text" name="creditCard" class="form-control" placeholder="Card Number (No Spaces)" required>
+                </div>
+                <div class=row>
+                  <div class="col">
+                    <input type="date" name="expiration" class="form-control" required>
+                  </div>
+                  <div class="col">
+                    <input type="password" name="cvv" class="form-control" placeholder="CVV" required>
+                  </div>
+                </div>           
+              </form>
+            </div>
+          </div>        
+
+          <!-- Modal Footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary place_order_button" data-dismiss="">Place Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
           </div>
         </div>
         </div>
