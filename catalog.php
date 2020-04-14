@@ -36,12 +36,6 @@
             echo $js;
         }
     }
-
-    // Debug to read contents of cart
-    foreach($_SESSION["cart"] as $val){
-        echo $val . "<br>";
-    }
-
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +72,7 @@
             <a class="nav-link" href="about.html">About Us</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="catalog.html">Products</a>
+            <a class="nav-link" href="catalog.php">Products</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="weather.php">Weather</a>
@@ -168,6 +162,7 @@
       </div>  
     </section>
 
+    <!-- Remove this later -->
     <!-- Modal -->
     <div id="purchase_modal" class="modal fade" role="dialog">
       <div class="modal-dialog modal-dialog-centered" role="document">

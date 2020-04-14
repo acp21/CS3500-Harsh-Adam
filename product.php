@@ -61,7 +61,7 @@
                         <a class="nav-link" href="about.html">About Us</a>
                       </li>
                       <li class="nav-item active">
-                        <a class="nav-link" href="catalog.html">Products</a>
+                        <a class="nav-link" href="catalog.php">Products</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="contact_us.html">Contact Us</a>
