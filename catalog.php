@@ -48,6 +48,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/catalog.css">
   <link rel="stylesheet" type="text/css" href="css/navbar.css">
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="javascript/catalog.js"></script>
@@ -162,75 +163,6 @@
         </div>  
       </div>  
     </section>
-
-    <!-- Remove this later -->
-    <!-- Modal -->
-    <div id="purchase_modal" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">Purchase Form</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
-
-          <!-- Checkout Modal -->
-          <div class="modal-body">
-            <!-- Container for Modal Content -->
-            <div class="container">
-              <!-- Form to collect to input -->
-              <form class="checkout_form" method="POST">
-                <label class="checkout_info_label">Personal Information</label>
-                <!-- Name -->
-                <div class=row>
-                  <div class="col">
-                    <input type="text" name="firstName" class="form-control" placeholder="First Name" required>
-                  </div>
-                  <div class="col">
-                    <input type="text" name="lastName" class="form-control" placeholder="Last Name" required>
-                  </div>
-                </div> 
-
-                <!-- Address -->
-                <div class=row>
-                  <input type="text" name="streetAddress" class="form-control" placeholder="Street Address" required><br>
-
-                  <input type="text" name="optionalAddress" class="form-control" placeholder="Apt, Suite, or Building (Optional)">
-                </div> 
-                <div class=row>
-                  <div class="col">
-                    <input type="text" name="location" class="form-control" placeholder="City, State" required>
-                  </div>
-                  <div class="col">
-                    <input type="text" name="zipcode" class="form-control" placeholder="Zip Code" required>
-                  </div>
-                </div> 
-
-                <label class="checkout_info_label">Billing Information</label>
-                <!-- Credit Card -->
-                <div class="row">
-                  <input type="text" name="creditCard" class="form-control" placeholder="Card Number (No Spaces)" required>
-                </div>
-                <div class=row>
-                  <div class="col">
-                    <input type="date" name="expiration" class="form-control" required>
-                  </div>
-                  <div class="col">
-                    <input type="password" name="cvv" class="form-control" placeholder="CVV" required>
-                  </div>
-                </div>           
-              </form>
-            </div>
-          </div>        
-
-          <!-- Modal Footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary place_order_button" data-dismiss="">Place Order</button>
-          </div>
-        </div>
-      </div>
-    </div>  
 
   </div>
 <footer>

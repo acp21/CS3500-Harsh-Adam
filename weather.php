@@ -30,7 +30,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-sm  navbar-dark fixed-top" id="navigation">
             <!-- Brand/Logo -->
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
                 <img src="images/Company-Logo.png" alt="Atlas Corporation" title="Atlas Corporation">
             </a>
             <!-- Pages -->
@@ -79,7 +79,7 @@
         <div class="submit">
             <input type="submit" class="btn btn-primary">
         </div>
-        <div class="row">
+        <div class="row info">
             <div class="col-md-6">
                 <div class="forecast">
                     <div class="temp">

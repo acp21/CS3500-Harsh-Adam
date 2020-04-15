@@ -29,3 +29,8 @@
 .btn{
     margin: 1em;
 }
+
+div.col-md-6
+{
+    margin-bottom: 4em;
+}
