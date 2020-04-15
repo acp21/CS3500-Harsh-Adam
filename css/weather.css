@@ -25,3 +25,7 @@
     text-align: center;
     border: .5em groove lightgrey;
 }
+
+.btn{
+    margin: 1em;
+}

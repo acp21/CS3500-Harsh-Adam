@@ -1,37 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- <?php
-
-    // Call a cURL GET request on the passed url
-    function callAPI($url){
-        // Prepare cURL object
-        $curl = curl_init();
-        // Set options for cURL object
-        // HTTP headers, cURL url
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-           'Content-Type: application/json',
-        ));
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-        // Get cURL result
-        $result = curl_exec($curl);
-        if(!$result){die("Connection Failure");}
-        curl_close($curl);
-        return $result;
-    }
-
-    $get_data = callAPI('http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=c3c492a15455fbdbf933ae22da3863f7');
-    $response = json_decode($get_data, true);
-    //  $errors = $response['response']['errors'];
-    $data = $response["list"][0]["main"]["temp"];
-    echo $data;
-    // Javascript script opener and closer for echoing js in php
-    define("JS_OPEN", '<script type="text/javascript>');
-    define("JS_CLOSE", '</script>');
-?> -->
-
 <head>
     <meta charset="UTF-8">
     <title>Atlas Corporation</title>
@@ -66,6 +35,9 @@
                     <a class="nav-link" href="catalog.php">Products</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="cart.php">Cart</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" href="weather.php">Weather</a>
                 </li>
                 <li class="nav-item">
@@ -95,7 +67,7 @@
             <input type="text" class="input form-control" id="data">
         </div>
         <div class="submit">
-            <input type="submit">
+            <input type="submit" class="btn btn-primary">
         </div>
         <div class="row">
             <div class="col-md-6">

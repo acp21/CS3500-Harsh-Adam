@@ -8,7 +8,7 @@ $(document).ready(function(){
     var apiID = "d2939654a3352a9dc8b97495cdb98211";
 
     function getCityImage(city){
-        var apiCall = "https://en.wikipedia.org/w/api.php?action=query&titles=" +  city + "&prop=pageimages&pithumbsize=1000&format=json";
+        var apiCall = "https://en.wikipedia.org/w/api.php?action=query&titles=" +  city + "&prop=pageimages&pithumbsize=700&format=json";
 
         console.log(apiCall);
         // Make call to wikipedias api to get image url

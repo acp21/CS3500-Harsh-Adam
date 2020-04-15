@@ -14,7 +14,7 @@
     flex-direction: column;
 }
 
-.product{
+.product-box{
     display: flex;
     border: .5em groove lightgrey;
     margin-bottom: 1em;
@@ -34,3 +34,4 @@
     text-align: right;
     margin: auto 2em auto auto;
 }
+
