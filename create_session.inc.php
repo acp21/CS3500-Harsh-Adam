@@ -1,6 +1,7 @@
 <?php  
 	try
 	{
+		//Connect to Data Base
 		$pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
 	
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);	
@@ -11,6 +12,7 @@
 
 		if(!isset($result['SessionKey']))
 		{
+			//Create new session
 			$queryString = "INSERT INTO session (SessionKey, ProBook, ProWatch, ProPhone, ProMonitor) VALUES ('" . $_COOKIE['PHPSESSID'] . "', " . "0, 0, 0, 0)";
 			$pdo->query($queryString);
 		}

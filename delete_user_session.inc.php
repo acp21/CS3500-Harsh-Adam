@@ -3,6 +3,7 @@
 	{
 		include 'config.inc.php';
 
+		//Connect to data base
 		$pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
 	
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);	

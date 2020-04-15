@@ -1,6 +1,7 @@
 <?php  
 	try
 	{
+		//Connect to data base
 		$pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
 
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -9,6 +10,7 @@
 
 		$result = $pdo->query($queryString)->fetch();
 
+		//Figure out what the user has selected to purchase if we were able to retreive from the data base
 		if(isset($result['SessionKey']))
 		{
 			$GLOBALS['g_ProductsInCart'] = array();
