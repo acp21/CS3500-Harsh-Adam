@@ -145,7 +145,6 @@
         <div class="col-md-6 product_description_right">
           <h4 class="jumbotron">Atlas Corporation Presents the ProPhone</h4>
           <h5>Atlas Corporation has taken a fan favorite and had the audacity to re imagine what a phone is. With the brand new advanced virtualization technology driven by artificial intelligence the Pro Phone is ready to tackle any problem that will come its way. With this new technology we are able to provide better cell service and capture photots and videos a lot better because of the in built AI.</h5><br>
-          <a href="product.php?productID=3">Learn More</a>
           <button type="button" class="btn btn-primary"><a href="?cart=3">Add to Cart</a></button>
         </div>   
       </div>
@@ -156,7 +155,6 @@
         <div class="col-md-6 product_description_left">
           <h4 class="jumbotron">Atlas Corporation Presents the ProMonitor</h4>
           <h5>Without the proper tools even the greatest minds in the world would have been nothing. That is why here at Atlas Corporation it is out top priority to bring you the most effecient tools to get the job done. Introducing the Pro Monitor which not only provides you a visual on your work, but it can also help you multi task with in build smart prediction technologies. We take our job seriously, so that you can take yours seriously.</h5><br>
-          <a href="product.php?productID=4">Learn More</a>
           <button type="button" class="btn btn-primary"><a href="?cart=4">Add to Cart</a></button>
         </div>   
         <div class="col-md-6 product_image_right">
