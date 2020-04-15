@@ -1,3 +1,11 @@
+<!-- CART PAGE
+     WEBTECH FINAL
+     WRITTEN BY ADAM POHL -->
+
+<!-- Cart uses sessions to properly store data
+     Whenever a user adds an item, that items id
+     gets appended to the cart array in the $_SESSION 
+     superglobal -->     
 <?php
     // Start session
     session_start();
@@ -184,6 +192,7 @@
 
 
     </div> <!-- End container -->
+    
 </body>
 
 </html>

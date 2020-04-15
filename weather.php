@@ -1,3 +1,13 @@
+<!-- WEATHER PAGE
+     CS 3500 FINAL
+     WRITTEN BY ADAM POHL -->
+
+<!-- Weather page uses javascript ajax queries to get data from two apis
+     One api is OpenWeatherMaps, and the other is Wikipedias api
+     upon a user entering a city name into the box, the javascript will
+     make a call to OWM to get forecast data while also making a call to wikipedia
+     to get an image of the city. Unfortunately, for smaller cities, the image is not returned from
+     the api call. All logic can be found in javascript/weather.js -->
 <!DOCTYPE html>
 <html lang="en">
 
