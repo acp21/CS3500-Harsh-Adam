@@ -4,6 +4,10 @@
 <?php
   include 'specifications.inc.php';
   include 'config.inc.php';
+  //Create a session if one was not already created
+  include 'create_session.inc.php';
+  //Set values in the data base entry for session specefic data
+  include 'append_user_session_data.inc.php';
   // Connect to database
   try{
     $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
@@ -178,5 +182,4 @@
         <p>&copy; Atlas Corporation 2020</p>
     </footer>
 </body>
-
 </html>

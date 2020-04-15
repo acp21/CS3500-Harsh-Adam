@@ -7,10 +7,11 @@
      gets appended to the cart array in the $_SESSION 
      superglobal -->     
 <?php
-    // Start session
-    session_start();
-
     include 'config.inc.php';
+    //Create a session if one was not already created
+    include 'create_session.inc.php';
+    //Set values in the data base entry for session specefic data
+    include 'retrieve_user_session_data.inc.php';
     // Connect to database
     try{
         $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
@@ -80,8 +81,8 @@
                 <div class="items">
                     <!-- PHP loop to print out each product in cart -->
                     <?php
-                    if(isset($_SESSION["cart"])){
-                        foreach($_SESSION["cart"] as $id){
+                    if(isset($GLOBALS['g_ProductsInCart'])){
+                        foreach($GLOBALS['g_ProductsInCart'] as $id){
                             $sql = "SELECT * FROM products WHERE ID='" . $id . "'"; // Prepare sql query
                             $product = $pdo -> query($sql);
                             $row = $product -> fetch(); // Get product row
@@ -182,5 +183,5 @@
     </div> <!-- End container -->
     
 </body>
-
 </html>
+
