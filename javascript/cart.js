@@ -50,6 +50,7 @@ window.addEventListener('load', function(event)
 
 		if(invalidInput)
 		{
+			event.preventDefault();
 			m_PurchaseButton.setAttribute("data-dismiss", "");
 		}
 		else
@@ -58,6 +59,8 @@ window.addEventListener('load', function(event)
 			alert("Thank you for your purchasae!");
 		}
 	});
+
+	//Fake call back from ajax function
 
 	//Checks to see if the name field is a valid input
 	function checkNameValidation()
@@ -187,5 +190,6 @@ window.addEventListener('load', function(event)
 
 		return isValid;
 	}
+
 
 });

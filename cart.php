@@ -99,7 +99,6 @@
                             $output .= '</div>';
 
                             echo $output;
-
                         }
                     }
                     else{
@@ -172,14 +171,18 @@
 	            </div>
 	          </div>        
 
+
 	          <!-- Modal Footer -->
-	          <div class="modal-footer">
-	            <button type="button" class="btn btn-primary place_order_button" data-dismiss="">Place Order</button>
-	          </div>
+              <form action="delete_user_session.inc.php" method="POST">
+                <div class="modal-footer">
+                    <input type="text" name="delete" style="display:none;" value="DeleteSession">
+                    <button type="submit" class="btn btn-primary place_order_button" data-dismiss="">Place Order</button>
+                </div>
+              </form>
+
 	        </div>
 	      </div>
 	    </div>  
-
     </div> <!-- End container -->
     
 </body>

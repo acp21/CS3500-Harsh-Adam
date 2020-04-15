@@ -37,6 +37,8 @@
 		{
 			$GLOBALS['g_ProductsInCart'] = null;
 		}
+
+		$pdo = null;
 	}
 	catch (PDOException $e) 
 	{
