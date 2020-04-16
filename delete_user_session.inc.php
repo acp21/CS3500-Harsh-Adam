@@ -1,6 +1,7 @@
 <?php  
 	try
 	{
+		//Include the Data Base Config
 		include 'config.inc.php';
 
 		//Connect to data base

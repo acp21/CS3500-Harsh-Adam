@@ -55,7 +55,6 @@ window.addEventListener('load', function(event)
 		}
 		else
 		{
-			m_PurchaseButton.setAttribute("data-dismiss", "modal");
 			alert("Thank you for your purchasae!");
 		}
 	});

@@ -1,6 +1,8 @@
-<?php  
+<?php 
 	try
 	{
+		//Start the session
+		session_start();
 		//Connect to Data Base
 		$pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
 	
