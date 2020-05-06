@@ -7,10 +7,11 @@
      gets appended to the cart array in the $_SESSION 
      superglobal -->     
 <?php
-    // Start session
-    session_start();
-
     include 'config.inc.php';
+    //Create a session if one was not already created
+    include 'create_session.inc.php';
+    //Set values in the data base entry for session specefic data
+    include 'retrieve_user_session_data.inc.php';
     // Connect to database
     try{
         $pdo = new PDO(DBCONNSTRING, DBUSER, DBPASS);
@@ -33,13 +34,11 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <!-- Catalog.css reuses modal code -->
-    <link rel="stylesheet" href="css/catalog.css">
     <link rel="stylesheet" href="css/cart.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="javascript/catalog.js"></script>
+    <script type="text/javascript" src="javascript/cart.js"></script>
 </head>
 
 <body>
@@ -61,7 +60,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="catalog.php">Products</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="cart.php">Cart</a>
                 </li>
                 <li class="nav-item">
@@ -82,8 +81,8 @@
                 <div class="items">
                     <!-- PHP loop to print out each product in cart -->
                     <?php
-                    if(isset($_SESSION["cart"])){
-                        foreach($_SESSION["cart"] as $id){
+                    if(isset($GLOBALS['g_ProductsInCart'])){
+                        foreach($GLOBALS['g_ProductsInCart'] as $id){
                             $sql = "SELECT * FROM products WHERE ID='" . $id . "'"; // Prepare sql query
                             $product = $pdo -> query($sql);
                             $row = $product -> fetch(); // Get product row
@@ -100,7 +99,6 @@
                             $output .= '</div>';
 
                             echo $output;
-
                         }
                     }
                     else{
@@ -110,89 +108,83 @@
                 </div> <!-- End items -->
 
             </div> <!-- End Column -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#purchase_modal">Payment Information</button>
-
-            <!-- Modal -->
-            <div id="purchase_modal" class="modal fade" role="dialog">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h4 class="modal-title">Purchase Form</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-
-                        <!-- Checkout Modal -->
-                        <div class="modal-body">
-                            <!-- Container for Modal Content -->
-                            <div class="container">
-                                <!-- Form to collect to input -->
-                                <form class="checkout_form" method="POST">
-                                    <label class="checkout_info_label">Personal Information</label>
-                                    <!-- Name -->
-                                    <div class=row>
-                                        <div class="col">
-                                            <input type="text" name="firstName" class="form-control"
-                                                placeholder="First Name" required>
-                                        </div>
-                                        <div class="col">
-                                            <input type="text" name="lastName" class="form-control"
-                                                placeholder="Last Name" required>
-                                        </div>
-                                    </div>
-
-                                    <!-- Address -->
-                                    <div class=row>
-                                        <input type="text" name="streetAddress" class="form-control"
-                                            placeholder="Street Address" required><br>
-
-                                        <input type="text" name="optionalAddress" class="form-control"
-                                            placeholder="Apt, Suite, or Building (Optional)">
-                                    </div>
-                                    <div class=row>
-                                        <div class="col">
-                                            <input type="text" name="location" class="form-control"
-                                                placeholder="City, State" required>
-                                        </div>
-                                        <div class="col">
-                                            <input type="text" name="zipcode" class="form-control"
-                                                placeholder="Zip Code" required>
-                                        </div>
-                                    </div>
-
-                                    <label class="checkout_info_label">Billing Information</label>
-                                    <!-- Credit Card -->
-                                    <div class="row">
-                                        <input type="text" name="creditCard" class="form-control"
-                                            placeholder="Card Number (No Spaces)" required>
-                                    </div>
-                                    <div class=row>
-                                        <div class="col">
-                                            <input type="date" name="expiration" class="form-control" required>
-                                        </div>
-                                        <div class="col">
-                                            <input type="password" name="cvv" class="form-control" placeholder="CVV"
-                                                required>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
-                        <!-- Modal Footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary place_order_button" data-dismiss="">Place
-                                Order</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <button type="button" class="btn btn-primary pay_info" data-toggle="modal" data-target="#purchase_modal">Payment Information</button>   
         </div> <!-- End row -->
 
+	    <!-- Modal -->
+	    <div id="purchase_modal" class="modal fade" role="dialog">
+	      <div class="modal-dialog modal-dialog-centered" role="document">
+	        <div class="modal-content">
 
+	          <!-- Modal Header -->
+	          <div class="modal-header">
+	            <h4 class="modal-title">Purchase Form</h4>
+	            <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          </div>
+
+	          <!-- Checkout Modal -->
+	          <div class="modal-body">
+	            <!-- Container for Modal Content -->
+	            <div class="container">
+	              <!-- Form to collect to input -->
+	              <form class="checkout_form" method="POST">
+	                <label class="checkout_info_label">Personal Information</label>
+	                <!-- Name -->
+	                <div class=row>
+	                  <div class="col">
+	                    <input type="text" name="firstName" class="form-control" placeholder="First Name" required>
+	                  </div>
+	                  <div class="col">
+	                    <input type="text" name="lastName" class="form-control" placeholder="Last Name" required>
+	                  </div>
+	                </div> 
+
+	                <!-- Address -->
+	                <div class=row>
+	                  <input type="text" name="streetAddress" class="form-control" placeholder="Street Address" required><br>
+
+	                  <input type="text" name="optionalAddress" class="form-control" placeholder="Apt, Suite, or Building (Optional)">
+	                </div> 
+	                <div class=row>
+	                  <div class="col">
+	                    <input type="text" name="location" class="form-control" placeholder="City, State" required>
+	                  </div>
+	                  <div class="col">
+	                    <input type="text" name="zipcode" class="form-control" placeholder="Zip Code" required>
+	                  </div>
+	                </div> 
+
+	                <label class="checkout_info_label">Billing Information</label>
+	                <!-- Credit Card -->
+	                <div class="row">
+	                  <input type="text" name="creditCard" class="form-control" placeholder="Card Number (No Spaces)" required>
+	                </div>
+	                <div class=row>
+	                  <div class="col">
+	                    <input type="date" name="expiration" class="form-control" required>
+	                  </div>
+	                  <div class="col">
+	                    <input type="password" name="cvv" class="form-control" placeholder="CVV" required>
+	                  </div>
+	                </div>           
+	              </form>
+	            </div>
+	          </div>        
+
+
+	          <!-- Modal Footer -->
+              <form action="delete_user_session.inc.php" method="POST">
+                <div class="modal-footer">
+                    <input type="text" name="delete" style="display:none;" value="DeleteSession">
+                    <button type="submit" class="btn btn-primary place_order_button" data-dismiss="">Place Order</button>
+                </div>
+              </form>
+
+	        </div>
+	      </div>
+	    </div>  
     </div> <!-- End container -->
     
 </body>
-
 </html>
+

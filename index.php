@@ -1,3 +1,10 @@
+<?php  
+  //Include Data Base Config
+  include 'config.inc.php';
+  //Create a user session within the data base
+  include 'create_session.inc.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

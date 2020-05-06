@@ -72,6 +72,12 @@ footer
   margin: .5em 0em .5em 0em;
 }
 
+/* Keeps button text from changing after click */
+.btn a, .btn a:link, .btn a:visited{
+  color: white;
+  text-decoration: none;
+}
+
 /*Format all the pictures so that js can animate*/
 img.pic
 {

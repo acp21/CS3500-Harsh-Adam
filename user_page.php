@@ -177,7 +177,7 @@
 					echo "				  <div class='card-body'>";
 					echo "				    <h5 class='card-title'>Pro<br>Phone</h5>";
 					echo "				    <h6 class='card-subtitle mb-2 text-muted'>Phone<h6>";
-					echo "				    <a href='catalog.html#pro_phone' class='card-link'>Learn More</a>";
+					echo "				    <a href='catalog.php#pro_phone' class='card-link'>Learn More</a>";
 					echo "				  </div> ";
 					echo "				</div>";
 					echo "			</div>";
@@ -186,7 +186,7 @@
 					echo "				  <div class='card-body'>";
 					echo "				    <h5 class='card-title'>Pro<br>Monitor</h5>";
 					echo "				    <h6 class='card-subtitle mb-2 text-muted'>Monitor<h6>";
-					echo "				    <a href='catalog.html#pro_monitor' class='card-link'>Learn More</a>";
+					echo "				    <a href='catalog.php#pro_monitor' class='card-link'>Learn More</a>";
 					echo "				  </div> ";
 					echo "				</div>";
 					echo "			</div>";
