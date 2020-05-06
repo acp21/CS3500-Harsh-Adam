@@ -5,6 +5,8 @@
 $(document).ready(function(){
 
     var api = "http://api.openweathermap.org/data/2.5/forecast?q=";
+    // HAVING AN API KEY IN OPEN SOURCE CODE IS GENERALLLY A VERY BAD IDEA
+    // IN A REAL PROJECT THIS SHOULD BE HIDDEN IN SOME WAY
     var apiID = "d2939654a3352a9dc8b97495cdb98211";
 
     function getCityImage(city){
